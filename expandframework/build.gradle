@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 27
@@ -15,13 +13,21 @@ android {
 
     }
 
+    signingConfigs {
+        rjp {
+            keyAlias 'rjp-key'
+            keyPassword '123456'
+            storeFile file('rjp.jks')
+            storePassword '123456'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
