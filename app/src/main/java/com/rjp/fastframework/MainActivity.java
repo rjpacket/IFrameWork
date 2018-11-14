@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rjp.expandframework.utils.ActivityUtil;
-import com.rjp.expandframework.utils.ImageLoaderUtil;
 
 import static com.rjp.expandframework.activitys.ForResultActivity.TRANS_BUNDLE;
 
@@ -50,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageView ivImage = findViewById(R.id.iv_image);
-        ImageLoaderUtil.load(this, "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg", ivImage, R.drawable.ic_launcher_background);
+//        ImageView ivImage = findViewById(R.id.iv_image);
+//        ImageLoaderUtil.load(this, "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg", ivImage, R.drawable.ic_launcher_background);
+
+        String packageName = getApplication().getPackageName();
+        tvMsg.setText(
+                "包名是：" + packageName + "\n" +
+                "版本号是：" + BuildConfig.VERSION_NAME + "\n" +
+                "类型是：" + BuildConfig.BUILD_TYPE + "\n"
+        );
     }
 }

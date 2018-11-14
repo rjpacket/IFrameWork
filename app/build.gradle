@@ -1,11 +1,5 @@
 apply plugin: 'com.android.application'
 
-def getDate() {
-    def date = new Date()
-    def formattedDate = date.format('yyyyMMddHHmm')
-    return formattedDate
-}
-
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -38,9 +32,13 @@ android {
 
     productFlavors {
         channel_A {
+            applicationId "com.rjp.AAAAA"
+            versionName "A1.0.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "channel_A"]
         }
         channel_B {
+            applicationId "com.rjp.BBBBB"
+            versionName "B1.0.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "channel_B"]
         }
     }
