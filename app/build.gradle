@@ -60,6 +60,7 @@ android {
             //只对Release包起作用，如果不是Release包则不变更名称。
             if (buildType == "release") {
                 //我此处的命名规则是：项目名_渠道名_版本名_构建类型.apk
+
                 fileName = APP_NAME + "-${channel}-v${appVersion}-${buildType}.apk"
 //                fileName = APP_NAME + ".apk"
                 //将名字打印出来，以便及时查看是否满意。
