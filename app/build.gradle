@@ -54,7 +54,7 @@ android {
         def createTime = new Date().format("YYYY_MM_dd", TimeZone.getTimeZone("GMT+08:00"))
         //只对Release包起作用，如果不是Release包则不变更输出路径，否则可能导致AS无法自动安装debug包。
         if (buildType == "release") {
-            it.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/auto-apks/${it.productFlavors[0].name}/${createTime}")
+            it.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/auto-apks/${it.productFlavors[0].name}")
         }
         it.outputs.each {
             //只对Release包起作用，如果不是Release包则不变更名称。
