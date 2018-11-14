@@ -46,6 +46,7 @@ android {
     applicationVariants.all {
         //判断是release还是debug版本
         def buildType = it.buildType.name
+        def appVersion = it.versionName
         def fileName
         //下面的channel是获取渠道号，你获取渠道号不一定会和我的代码一样，因为有可能你的渠道名称的规则和我的不一样，我的规则是${渠道名}-${applicationId},所以我是这样取的。
         def channel = it.productFlavors[0].name
@@ -58,8 +59,8 @@ android {
         it.outputs.each {
             //只对Release包起作用，如果不是Release包则不变更名称。
             if (buildType == "release") {
-                //我此处的命名规则是：渠道名_项目名_版本名_创建时间_构建类型.apk
-                fileName = "IFrame" + "-${channel}-v" + APP_VERSION + "-${createTime}-${buildType}.apk"
+                //我此处的命名规则是：项目名_渠道名_版本名_构建类型.apk
+                fileName = APP_NAME + "-${channel}-v${appVersion}-${buildType}.apk"
                 //将名字打印出来，以便及时查看是否满意。
                 println "文件名：-----------------${fileName}"
                 //重新对apk命名。(适用于Gradle4.0以下版本)
