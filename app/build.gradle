@@ -51,7 +51,8 @@ android {
         //下面的channel是获取渠道号，你获取渠道号不一定会和我的代码一样，因为有可能你的渠道名称的规则和我的不一样，我的规则是${渠道名}-${applicationId},所以我是这样取的。
         def channel = it.productFlavors[0].name
         //获取当前时间的"YYYY-MM-dd"格式。
-        def createTime = new Date().format("YYYY_MM_dd", TimeZone.getTimeZone("GMT+08:00"))
+//        def createTime = new Date().format("YYYY_MM_dd", TimeZone.getTimeZone("GMT+08:00"))
+        def createTime = BUILD_TIME
         //只对Release包起作用，如果不是Release包则不变更输出路径，否则可能导致AS无法自动安装debug包。
         if (buildType == "release") {
             it.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/auto-apks/${it.productFlavors[0].name}/${createTime}")
@@ -61,7 +62,7 @@ android {
             if (buildType == "release") {
                 //我此处的命名规则是：项目名_渠道名_版本名_构建类型.apk
 
-                fileName = APP_NAME + "-${channel}-v${appVersion}-${buildType}.apk"
+                fileName = APP_NAME + "-${channel}-v${appVersion}-${buildType}-${createTime}.apk"
 //                fileName = APP_NAME + ".apk"
                 //将名字打印出来，以便及时查看是否满意。
                 println "文件名：-----------------${fileName}"
