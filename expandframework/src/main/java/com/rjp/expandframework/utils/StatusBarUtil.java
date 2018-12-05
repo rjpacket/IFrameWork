@@ -28,8 +28,7 @@ public class StatusBarUtil {
      * @param window
      * @param isLightMode
      */
-    public static void setStatusBarLightMode(@NonNull final Window window,
-                                             final boolean isLightMode) {
+    public static void setStatusBarLightMode(@NonNull final Window window, final boolean isLightMode) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             View decorView = window.getDecorView();
             if (decorView != null) {

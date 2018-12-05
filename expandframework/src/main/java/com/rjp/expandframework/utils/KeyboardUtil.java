@@ -144,10 +144,10 @@ public final class KeyboardUtil {
     }
 
     /**
-     * Register soft input changed listener.
+     * Register soft input changed onActivityForResultListener.
      *
      * @param activity The activity.
-     * @param listener The soft input changed listener.
+     * @param listener The soft input changed onActivityForResultListener.
      */
     public static void registerSoftInputChangedListener(final Activity activity,
                                                         final OnSoftInputChangedListener listener) {
@@ -175,7 +175,7 @@ public final class KeyboardUtil {
     }
 
     /**
-     * Unregister soft input changed listener.
+     * Unregister soft input changed onActivityForResultListener.
      *
      * @param activity The activity.
      */

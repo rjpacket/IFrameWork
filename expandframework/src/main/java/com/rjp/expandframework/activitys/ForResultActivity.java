@@ -45,8 +45,8 @@ public class ForResultActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (null != ActivityUtil.listener) {
-            ActivityUtil.listener.onActivityResult(requestCode, resultCode, data);
+        if (null != ActivityUtil.onActivityForResultListener) {
+            ActivityUtil.onActivityForResultListener.onActivityResult(requestCode, resultCode, data);
         }
         finish();
     }
@@ -54,7 +54,7 @@ public class ForResultActivity extends Activity {
     @Override
     protected void onDestroy() {
         //防止内存泄露
-        ActivityUtil.listener = null;
+        ActivityUtil.onActivityForResultListener = null;
         super.onDestroy();
     }
 }
