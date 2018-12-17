@@ -1,4 +1,4 @@
-package com.rjp.expandframework.AppUtil;
+package com.rjp.expandframework.utils;
 
 import android.app.Activity;
 import android.app.KeyguardManager;
@@ -17,8 +17,6 @@ import android.view.Surface;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-
-import com.rjp.expandframework.utils.AppUtil;
 
 import static android.Manifest.permission.WRITE_SETTINGS;
 
