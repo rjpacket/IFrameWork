@@ -19,7 +19,6 @@
             />
 
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -36,13 +35,16 @@
         <activity android:name=".SecondActivity">
         </activity>
         <activity android:name=".live.LiveStartActivity">
+
+        </activity>
+        <activity android:name=".live.LiveDetailActivity">
+        </activity>
+        <activity android:name=".scroll_view.ScrollMoreActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".live.LiveDetailActivity">
         </activity>
     </application>
 

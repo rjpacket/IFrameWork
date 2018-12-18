@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rjp.fastframework.scroll_view.ScrollMoreActivity"
+    >
+    <com.rjp.expandframework.views.moreScrollView.ScrollMoreView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.rjp.expandframework.views.moreScrollView.ScrollableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_1"
+                    android:gravity="center"
+                    android:background="#da8686"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_1"
+                    android:gravity="center"
+                    android:background="#da8686"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_1"
+                    android:gravity="center"
+                    android:background="#da8686"
+                    android:layout_marginTop="20dp"
+                    />
+            </LinearLayout>
+        </com.rjp.expandframework.views.moreScrollView.ScrollableScrollView>
+
+        <com.rjp.expandframework.views.moreScrollView.ScrollableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_2"
+                    android:gravity="center"
+                    android:background="#76cab5"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_2"
+                    android:gravity="center"
+                    android:background="#76cab5"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_2"
+                    android:gravity="center"
+                    android:background="#76cab5"
+                    android:layout_marginTop="20dp"
+                    />
+            </LinearLayout>
+        </com.rjp.expandframework.views.moreScrollView.ScrollableScrollView>
+
+        <com.rjp.expandframework.views.moreScrollView.ScrollableScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_3"
+                    android:gravity="center"
+                    android:background="#6ea7dc"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_3"
+                    android:gravity="center"
+                    android:background="#6ea7dc"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="scroll_3"
+                    android:gravity="center"
+                    android:background="#6ea7dc"
+                    android:layout_marginTop="20dp"
+                    />
+            </LinearLayout>
+        </com.rjp.expandframework.views.moreScrollView.ScrollableScrollView>
+    </com.rjp.expandframework.views.moreScrollView.ScrollMoreView>
+</LinearLayout>
