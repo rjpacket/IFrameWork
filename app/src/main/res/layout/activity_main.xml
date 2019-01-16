@@ -102,6 +102,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         >
         <com.rjp.expandframework.views.cameraView.CameraView
             android:id="@+id/camera_view"
@@ -116,5 +117,19 @@
             android:text="拍照"
             />
     </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下载"
+        />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="暂停"
+        />
 
 </LinearLayout>

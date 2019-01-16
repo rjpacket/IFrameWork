@@ -6,6 +6,7 @@ import android.app.Application;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -517,6 +518,11 @@ public class AppUtil {
         public boolean isVerticalSlide;
     }
 
+    /**
+     * 获取文件的uri
+     * @param file
+     * @return
+     */
     public static Uri file2Uri(@NonNull final File file) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             String authority = AppUtil.getApp().getPackageName() + ".utilcode.provider";
@@ -524,6 +530,21 @@ public class AppUtil {
         } else {
             return Uri.fromFile(file);
         }
+    }
+
+    /**
+     * 安装apk
+     * @param filePath
+     */
+    public static void installApk(Context context, String filePath) {
+        File apkFile = new File(filePath);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        }
+        intent.setDataAndType(file2Uri(apkFile), "application/vnd.android.package-archive");
+        context.startActivity(intent);
     }
 
     /**

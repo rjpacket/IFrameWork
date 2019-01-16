@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExpandFramework</string>
+    <string name="auth_provider">com.rjp.AAAAA.utilcode.provider</string>
 </resources>

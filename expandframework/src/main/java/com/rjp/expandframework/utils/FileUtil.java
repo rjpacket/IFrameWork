@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Environment;
 
+import com.rjp.expandframework.BuildConfig;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,6 +17,7 @@ import java.io.IOException;
  */
 public class FileUtil {
     public static final String IMAGES_DIR = "images";
+    public static final String APKS_DIR = "apks";
 
     /**
      * 是否挂载了sd卡
@@ -151,6 +154,17 @@ public class FileUtil {
         return file == null ? "" : file.getAbsolutePath();
     }
 
+    /**
+     * 获取存储app apk的文件路径
+     *
+     * @param context
+     * @return
+     */
+    public static String getAppApksPath(Context context) {
+        File file = createNewDir(new File(getStorageCacheDirectory(context), APKS_DIR));
+        return file == null ? "" : file.getAbsolutePath();
+    }
+
     /*---------------------------------------------以下为工具-------------------------------------------------*/
 
     /**
@@ -180,5 +194,14 @@ public class FileUtil {
                 }
             }
         }
+    }
+
+    /**
+     * 一个版本只有一个更新文件
+     * @param context
+     * @return
+     */
+    public static String getAutoUpdateApkPath(Context context) {
+        return getAppApksPath(context) + File.separator + "AutoUpdate" + BuildConfig.VERSION_NAME + ".apk";
     }
 }

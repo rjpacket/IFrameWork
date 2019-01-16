@@ -31,6 +31,12 @@
                     android:scheme="fast"
                     />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".SecondActivity">
         </activity>
@@ -40,11 +46,7 @@
         <activity android:name=".live.LiveDetailActivity">
         </activity>
         <activity android:name=".scroll_view.ScrollMoreActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
     </application>
 

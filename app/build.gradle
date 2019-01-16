@@ -142,10 +142,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compile project(path: ':expandframework')
+    implementation project(path: ':expandframework')
 
     implementation 'com.blankj:utilcode:1.21.2'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'org.aspectj:aspectjrt:1.8.9'
     implementation 'com.android.support:design:27.1.1'
+    //下载库
+    implementation 'com.liulishuo.filedownloader:library:1.7.4'
 }
