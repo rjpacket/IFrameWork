@@ -32,22 +32,23 @@
                     />
             </intent-filter>
 
+        </activity>
+        <activity android:name=".SecondActivity">
+        </activity>
+        <activity android:name=".live.LiveStartActivity">
+        </activity>
+        <activity android:name=".live.LiveDetailActivity">
+        </activity>
+        <activity android:name=".scroll_view.ScrollMoreActivity">
+        </activity>
+        <activity android:name="com.rjp.expandframework.utils.photo.PhotoTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity">
-        </activity>
-        <activity android:name=".live.LiveStartActivity">
 
-        </activity>
-        <activity android:name=".live.LiveDetailActivity">
-        </activity>
-        <activity android:name=".scroll_view.ScrollMoreActivity">
-
-        </activity>
     </application>
 
 </manifest>

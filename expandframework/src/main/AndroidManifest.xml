@@ -5,12 +5,20 @@
     >
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"
+        />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false"
+        />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
@@ -29,13 +37,22 @@
                 />
         </provider>
 
-        <activity android:name=".activitys.ForResultActivity"
-            android:theme="@android:style/Theme.Translucent">
+        <activity
+            android:name=".activitys.ForResultActivity"
+            android:theme="@android:style/Theme.Translucent"
+            >
         </activity>
 
-        <activity android:name=".activitys.PermissionActivity"
-                  android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        <activity
+            android:name=".activitys.PermissionActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            >
+        </activity>
 
+        <activity
+            android:name="com.rjp.expandframework.utils.photo.PhotoMiddleActivity"
+            android:theme="@android:style/Theme.Translucent"
+            >
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.rjp.fastframework.update;
+package com.rjp.expandframework.utils.update;
 
 import android.Manifest;
 import android.content.Context;

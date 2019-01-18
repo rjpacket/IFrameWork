@@ -1,4 +1,4 @@
-package com.rjp.fastframework.update;
+package com.rjp.expandframework.utils.update;
 
 /**
  * author : Gimpo create on 2019/1/16 15:42

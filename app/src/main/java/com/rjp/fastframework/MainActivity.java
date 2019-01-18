@@ -19,8 +19,8 @@ import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
 import com.rjp.expandframework.views.cameraView.CameraView;
 import com.rjp.expandframework.views.tagCloud.TagCloudView;
-import com.rjp.fastframework.update.AutoUpdateUtil;
-import com.rjp.fastframework.update.UpdateStateCallback;
+import com.rjp.expandframework.utils.update.AutoUpdateUtil;
+import com.rjp.expandframework.utils.update.UpdateStateCallback;
 
 import java.util.ArrayList;
 
