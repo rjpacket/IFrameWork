@@ -85,7 +85,11 @@ public class XImageView extends android.support.v7.widget.AppCompatImageView {
         super.onDraw(canvas);
 
         if(srcBitmap == null){
-            setSrcBitmap(((BitmapDrawable)getDrawable()).getBitmap());
+            BitmapDrawable drawable = (BitmapDrawable) getDrawable();
+            if(drawable == null){
+                return;
+            }
+            setSrcBitmap(drawable.getBitmap());
         }
 
         if (targetBitmap != null) {

@@ -49,6 +49,10 @@ public class PermissionUtil {
         }
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public void request(PermissionCallback callback) {
         PermissionUtil.callback = callback;
         Intent intent = new Intent(context, PermissionActivity.class);
@@ -75,6 +79,7 @@ public class PermissionUtil {
 
     /**
      * 权限的描述
+     *
      * @param permission
      * @return
      */

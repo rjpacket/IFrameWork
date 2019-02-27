@@ -3,14 +3,11 @@ package com.rjp.expandframework.utils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Application;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -548,29 +545,12 @@ public class AppUtil {
     }
 
     /**
-     * Uri to file.
-     *
-     * @param uri        The uri.
-     * @param columnName The name of the target column.
-     * @return file
+     * 浏览器打开
+     * @param context
+     * @param url
      */
-    public static File uri2File(@NonNull final Uri uri, final String columnName) {
-        if (ContentResolver.SCHEME_FILE.equals(uri.getScheme())) {
-            return new File(uri.getPath());
-        }
-        CursorLoader cl = new CursorLoader(AppUtil.getApp());
-        cl.setUri(uri);
-        cl.setProjection(new String[]{columnName});
-        Cursor cursor = null;
-        try {
-            cursor = cl.loadInBackground();
-            int columnIndex = cursor.getColumnIndexOrThrow(columnName);
-            cursor.moveToFirst();
-            return new File(cursor.getString(columnIndex));
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
+    public static void browserOpen(Context context, String url){
+        Uri uri = Uri.parse(url);
+        context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.rjp.expandframework.R;
+import com.rjp.expandframework.utils.AppUtil;
 
 /**
  * 拍照测试类
@@ -34,12 +35,7 @@ public class PhotoTestActivity extends Activity {
         btnTake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PhotoUtil.takePhoto(mContext, false, new PhotoCallback() {
-                    @Override
-                    public void choosePhoto(String photoPath) {
-                        btnTake.setText(photoPath);
-                    }
-                });
+                AppUtil.browserOpen(mContext, "weixin://dl/scan");
             }
         });
 
