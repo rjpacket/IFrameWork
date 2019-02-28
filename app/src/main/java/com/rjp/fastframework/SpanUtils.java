@@ -67,41 +67,41 @@ public class SpanUtils {
 //        return spannableString;
 //    }
 
-    public static SpannableString setTextColorSpan(SpannableString spannableString, String target, String key, int color){
+    public static SpannableString setTextColorSpan(SpannableString spannableString, String target, String key, int color) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new ForegroundColorSpan(color), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextBackgroundColorSpan(SpannableString spannableString, String target, String key, int color){
+    public static SpannableString setTextBackgroundColorSpan(SpannableString spannableString, String target, String key, int color) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new BackgroundColorSpan(color), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextSizeSpan(SpannableString spannableString, String target, String key, float size){
+    public static SpannableString setTextSizeSpan(SpannableString spannableString, String target, String key, float size) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new RelativeSizeSpan(size), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextMiddleLineSpan(SpannableString spannableString, String target, String key){
+    public static SpannableString setTextMiddleLineSpan(SpannableString spannableString, String target, String key) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new StrikethroughSpan(), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextUnderLineSpan(SpannableString spannableString, String target, String key){
+    public static SpannableString setTextUnderLineSpan(SpannableString spannableString, String target, String key) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new UnderlineSpan(), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
@@ -109,13 +109,14 @@ public class SpanUtils {
 
     /**
      * 右上角标
+     *
      * @param target
      * @param key
      * @return
      */
-    public static SpannableString setTextSuperscriptSpan(SpannableString spannableString, String target, String key){
+    public static SpannableString setTextSuperscriptSpan(SpannableString spannableString, String target, String key) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new SuperscriptSpan(), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
@@ -123,13 +124,14 @@ public class SpanUtils {
 
     /**
      * 右下角标
+     *
      * @param target
      * @param key
      * @return
      */
-    public static SpannableString setTextSubscriptSpan(SpannableString spannableString, String target, String key){
+    public static SpannableString setTextSubscriptSpan(SpannableString spannableString, String target, String key) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new SubscriptSpan(), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
@@ -137,13 +139,14 @@ public class SpanUtils {
 
     /**
      * 设置粗体
+     *
      * @param target
      * @param key
      * @return
      */
-    public static SpannableString setTextBoldSpan(SpannableString spannableString, String target, String key){
+    public static SpannableString setTextBoldSpan(SpannableString spannableString, String target, String key) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new StyleSpan(Typeface.BOLD), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
@@ -151,37 +154,38 @@ public class SpanUtils {
 
     /**
      * 设置斜体
+     *
      * @param target
      * @param key
      * @return
      */
-    public static SpannableString setTextItalicSpan(SpannableString spannableString, String target, String key){
+    public static SpannableString setTextItalicSpan(SpannableString spannableString, String target, String key) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new StyleSpan(Typeface.ITALIC), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextImageSpan(SpannableString spannableString, String target,  String key, Drawable drawable){
+    public static SpannableString setTextImageSpan(SpannableString spannableString, String target, String key, Drawable drawable) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new ImageSpan(drawable), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextClickableSpan(SpannableString spannableString, String target,  String key, ClickableSpan clickableSpan){
+    public static SpannableString setTextClickableSpan(SpannableString spannableString, String target, String key, ClickableSpan clickableSpan) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(clickableSpan, matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
     }
 
-    public static SpannableString setTextURLSpan(SpannableString spannableString, String target,  String key, String linkUrl){
+    public static SpannableString setTextURLSpan(SpannableString spannableString, String target, String key, String linkUrl) {
         Matcher matcher = getMatcher(target, key);
-        while (matcher.find()){
+        while (matcher.find()) {
             spannableString.setSpan(new URLSpan(linkUrl), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
         return spannableString;

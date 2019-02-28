@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="loading_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -13,4 +14,5 @@
         <item name="android:windowEnterAnimation">@anim/dialog_default_in</item>
         <item name="android:windowExitAnimation">@anim/dialog_default_out</item>
     </style>
+
 </resources>

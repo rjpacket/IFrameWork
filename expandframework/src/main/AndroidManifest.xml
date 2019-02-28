@@ -22,6 +22,11 @@
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application>
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -42,17 +47,17 @@
             android:theme="@android:style/Theme.Translucent"
             >
         </activity>
-
         <activity
             android:name=".activitys.PermissionActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
             >
         </activity>
-
         <activity
-            android:name="com.rjp.expandframework.utils.photo.PhotoMiddleActivity"
+            android:name=".utils.photo.PhotoMiddleActivity"
             android:theme="@android:style/Theme.Translucent"
             >
+        </activity>
+        <activity android:name=".mvp.view.LoginActivity">
         </activity>
     </application>
 

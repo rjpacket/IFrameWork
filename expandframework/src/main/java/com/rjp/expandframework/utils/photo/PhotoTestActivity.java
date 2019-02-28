@@ -2,12 +2,13 @@ package com.rjp.expandframework.utils.photo;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.rjp.expandframework.R;
-import com.rjp.expandframework.utils.AppUtil;
+import com.rjp.expandframework.mvp.view.LoginActivity;
 
 /**
  * 拍照测试类
@@ -35,7 +36,7 @@ public class PhotoTestActivity extends Activity {
         btnTake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtil.browserOpen(mContext, "weixin://dl/scan");
+                mContext.startActivity(new Intent(mContext, LoginActivity.class));
             }
         });
 
