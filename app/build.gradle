@@ -144,7 +144,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(path: ':expandframework')
 
-    implementation 'com.blankj:utilcode:1.21.2'
+//    implementation 'com.blankj:utilcode:1.21.2'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'org.aspectj:aspectjrt:1.8.9'
     implementation 'com.android.support:design:27.1.1'

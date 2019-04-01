@@ -11,9 +11,9 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
@@ -26,13 +26,14 @@ import com.rjp.expandframework.R;
  */
 public class RoundImageView extends AppCompatImageView {
     private Context mContext;
-    private int width;
-    private int height;
+    private int viewWidth;
+    private int viewHeight;
     private Paint mPaint;
     private Bitmap srcBitmap;
     private Paint borderPaint;
     private float borderWidth;
     private int borderColor;
+    private float radius;
 
     public RoundImageView(Context context) {
         super(context);
@@ -47,8 +48,9 @@ public class RoundImageView extends AppCompatImageView {
         mContext = context;
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView);
-        if(array != null){
+        if (array != null) {
             borderWidth = array.getDimension(R.styleable.CircleImageView_border_width, 0);
+            radius = array.getDimension(R.styleable.CircleImageView_radius, 0);
             borderColor = array.getColor(R.styleable.CircleImageView_border_color, Color.WHITE);
         }
 
@@ -59,18 +61,44 @@ public class RoundImageView extends AppCompatImageView {
         borderPaint = new Paint();
         borderPaint.setAntiAlias(true);
         borderPaint.setColor(borderColor);
-        borderPaint.setStyle(Paint.Style.STROKE);
-        borderPaint.setStrokeWidth(dp2px((int) borderWidth));
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        width = MeasureSpec.getSize(widthMeasureSpec);
-        height = MeasureSpec.getSize(heightMeasureSpec);
-        setMeasuredDimension(width, height);
+        int imageWidth = MeasureSpec.getSize(widthMeasureSpec);
+        int imageHeight = MeasureSpec.getSize(heightMeasureSpec);
+        viewWidth = (int) (imageWidth + 2 * borderWidth);
+        viewHeight = (int) (imageHeight + 2 * borderWidth);
+        setMeasuredDimension(viewWidth, viewHeight);
     }
 
+
+    /**
+     * 设置画笔的填充
+     */
+    private void setPaintShader(Bitmap bitmap, Paint paint) {
+        BitmapShader bShader = new BitmapShader(bitmap, Shader.TileMode.MIRROR, Shader.TileMode.MIRROR);
+        float bScale = (float) Math.max(viewWidth * 1.0 / bitmap.getWidth(), viewHeight * 1.0 / bitmap.getHeight());
+        Matrix bMatrix = new Matrix();
+        bMatrix.setScale(bScale, bScale);
+        bShader.setLocalMatrix(bMatrix);
+        paint.setShader(bShader);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        //        super.onDraw(canvas);
+        Drawable drawable = getDrawable();
+        if (drawable != null) {
+            srcBitmap = drawableToBitmap(drawable);
+            setPaintShader(srcBitmap, mPaint);
+            if(borderWidth > 0) {
+                canvas.drawRoundRect(new RectF(0, 0, viewWidth, viewHeight), radius, radius, borderPaint);
+            }
+            canvas.drawRoundRect(new RectF(borderWidth, borderWidth, viewWidth - borderWidth, viewHeight - borderWidth), radius, radius, mPaint);
+        }
+    }
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
         // 取 drawable 的长宽
@@ -86,33 +114,6 @@ public class RoundImageView extends AppCompatImageView {
         // 把 drawable 内容画到画布中
         drawable.draw(canvas);
         return bitmap;
-    }
-
-    /**
-     * 设置画笔的填充
-     */
-    private void setPaintShader(Bitmap bitmap, Paint paint) {
-        BitmapShader bShader = new BitmapShader(bitmap, Shader.TileMode.MIRROR, Shader.TileMode.MIRROR);
-        float bScale = (float) Math.max(width * 1.0 / bitmap.getWidth(), height * 1.0 / bitmap.getHeight());
-        Matrix bMatrix = new Matrix();
-        bMatrix.setScale(bScale, bScale);
-        bShader.setLocalMatrix(bMatrix);
-        paint.setShader(bShader);
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        //        super.onDraw(canvas);
-        Drawable drawable = getDrawable();
-        if (drawable != null) {
-            srcBitmap = drawableToBitmap(drawable);
-            setPaintShader(srcBitmap, mPaint);
-            canvas.drawCircle(width / 2, height / 2, (width - dp2px((int) (borderWidth * 2))) / 2, mPaint);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                int borderHalf = (int) (borderWidth / 2);
-                canvas.drawArc(dp2px(borderHalf), dp2px(borderHalf), width - dp2px(borderHalf), height - dp2px(borderHalf), 0, 360, false, borderPaint);
-            }
-        }
     }
 
     public int dp2px(int dp) {
