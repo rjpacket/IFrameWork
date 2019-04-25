@@ -22,7 +22,7 @@ public class LoginActivity extends Activity implements ILoginView, View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_mvp);
 
         etUserName = findViewById(R.id.et_user_name);
         etPassword = findViewById(R.id.et_user_password);

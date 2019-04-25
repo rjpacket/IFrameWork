@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.rjp.commonlib.ApplicationConfig;
+import com.rjp.commonlib.IAppInit;
 import com.rjp.expandframework.interfaces.ImageLoader;
 import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
@@ -21,11 +23,13 @@ import com.squareup.leakcanary.LeakCanary;
  * author : Gimpo create on 2018/11/5 18:14
  * email  : jimbo922@163.com
  */
-public class MyApplication extends Application {
+public class MainApplication extends Application implements IAppInit {
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        init(this);
 
         AppUtil.initApp(this);
 
@@ -108,6 +112,21 @@ public class MyApplication extends Application {
             activityDisplayMetrics.density = targetDensity;
             activityDisplayMetrics.scaledDensity = targetScaledDensity;
             activityDisplayMetrics.densityDpi = targetDensityDpi;
+        }
+    }
+
+    @Override
+    public void init(Application application) {
+        for (String clazz : ApplicationConfig.APPLICATIONS) {
+            try {
+                Class<?> object = Class.forName(clazz);
+                Object instance = object.newInstance();
+                if(instance instanceof IAppInit){
+                    ((IAppInit)instance).init(this);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

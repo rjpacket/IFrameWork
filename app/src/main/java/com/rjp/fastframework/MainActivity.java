@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MyApplication.setCustomDensity(this, getApplication());
+        MainApplication.setCustomDensity(this, getApplication());
         setContentView(R.layout.activity_main);
 
         mContext = this;
