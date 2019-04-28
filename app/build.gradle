@@ -72,7 +72,7 @@ android {
 
         ndk {
             moduleName "hello"
-            abiFilters "armeabi", "armeabi-v7a"
+//            abiFilters "armeabi", "armeabi-v7a"
         }
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -168,4 +168,9 @@ dependencies {
         implementation project(':shopcomponent')
     }
     implementation project(':commonlib')
+
+    // Okhttp库
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    // Retrofit库
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
 }

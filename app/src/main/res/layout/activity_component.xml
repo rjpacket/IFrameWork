@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,33 +9,24 @@
     tools:context="com.rjp.fastframework.component.ComponentActivity"
     >
 
-    <Button
-        android:id="@+id/loginBtn"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="去登录模块"
-        android:onClick="login"
-        />
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="去购物模块"
-        android:onClick="shop"
-        />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="加载购物车组件"
-        android:onClick="loadShop"
-        />
+        </android.support.v7.widget.RecyclerView>
 
-    <FrameLayout
-        android:id="@+id/container"
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <ViewStub
+        android:id="@+id/stub_empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
-
-    </FrameLayout>
-</LinearLayout>
+        android:layout="@layout/empty_view"
+        />
+</FrameLayout>
