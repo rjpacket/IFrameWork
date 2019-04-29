@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.reflect.TypeToken;
 import com.rjp.commonlib.ServiceFactory;
 import com.rjp.expandframework.baseRecycler.base.BaseRViewActivity;
 import com.rjp.expandframework.baseRecycler.base.RViewAdapter;
@@ -20,10 +21,13 @@ import com.rjp.expandframework.baseRecycler.helper.RefreshHelper;
 import com.rjp.expandframework.baseRecycler.holder.RViewHolder;
 import com.rjp.expandframework.baseRecycler.inteface.RViewItem;
 import com.rjp.expandframework.liveDataBus.LiveDataBus;
+import com.rjp.expandframework.okhttp.CallbackListener;
+import com.rjp.expandframework.okhttp.IOkHttp;
 import com.rjp.fastframework.R;
 import com.rjp.fastframework.Hello;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ComponentActivity extends BaseRViewActivity<String> {
@@ -91,11 +95,17 @@ public class ComponentActivity extends BaseRViewActivity<String> {
 
     @Override
     public void onRefresh() {
-        ArrayList<String> datas = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            datas.add(String.valueOf(new Random().nextInt(100)));
-        }
-        helper.notifyData(null);
+        IOkHttp.post("", "", new CallbackListener<List<String>>() {
+            @Override
+            public void onSuccess(List<String> model) {
+
+            }
+
+            @Override
+            public void onFailure() {
+
+            }
+        });
     }
 
     @Override

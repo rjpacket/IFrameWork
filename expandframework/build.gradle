@@ -107,4 +107,5 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.8.9'
     //下载库
     implementation 'com.liulishuo.filedownloader:library:1.7.4'
+    implementation 'com.google.code.gson:gson:2.8.2'
 }

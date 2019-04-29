@@ -1,7 +1,6 @@
 package com.rjp.expandframework.baseRecycler.helper;
 
 import android.support.annotation.NonNull;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -85,11 +84,11 @@ public class RViewHelper<T> {
         if (currentPageNumber == startPageNumber) {
             adapter.updateDatas(datas);
             if (datas == null || datas.size() == 0) {
-                refreshHelper.hiddenRecyclerView();
+                refreshHelper.hiddenRefreshView();
                 emptyView.setVisibility(View.VISIBLE);
             } else {
                 hasNoMoreData = false;
-                refreshHelper.showRecyclerView();
+                refreshHelper.showRefreshView();
                 emptyView.setVisibility(View.GONE);
             }
         } else {

@@ -36,13 +36,13 @@ public class RefreshHelper {
         }
     }
 
-    public void hiddenRecyclerView() {
+    public void hiddenRefreshView() {
         if(refreshLayout != null){
             refreshLayout.setVisibility(View.GONE);
         }
     }
 
-    public void showRecyclerView() {
+    public void showRefreshView() {
         if(refreshLayout != null){
             refreshLayout.setVisibility(View.VISIBLE);
         }
