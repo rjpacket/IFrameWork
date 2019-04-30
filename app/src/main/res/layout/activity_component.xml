@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,24 +9,22 @@
     tools:context="com.rjp.fastframework.component.ComponentActivity"
     >
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/refresh_layout"
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </android.support.v7.widget.RecyclerView>
-
-    </android.support.v4.widget.SwipeRefreshLayout>
-
-    <ViewStub
-        android:id="@+id/stub_empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout="@layout/empty_view"
+        android:layout_height="wrap_content"
+        android:text="start"
+        android:onClick="login"
         />
-</FrameLayout>
+
+
+    <com.rjp.fastframework.component.FloatLayout
+        android:id="@+id/float_layout"
+        android:layout_width="match_parent"
+        android:background="#e7cccc"
+        android:layout_height="300dp">
+
+    </com.rjp.fastframework.component.FloatLayout>
+
+
+
+</LinearLayout>

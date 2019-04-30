@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,18 +31,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ComponentActivity extends BaseRViewActivity<String> {
+public class ComponentActivity extends AppCompatActivity{
 
     private ArrayList<String> strings;
+    private FloatLayout floatLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_component);
+
+        floatLayout = findViewById(R.id.float_layout);
+
+        ScrollView scrollView = new ScrollView(this);
+
     }
 
     public void login(View view) {
-        ServiceFactory.getInstance().getLoginService().start(this);
+        floatLayout.addBean(new FloatBean());
     }
 
     public void shop(View view) {
@@ -50,70 +57,5 @@ public class ComponentActivity extends BaseRViewActivity<String> {
 
     public void loadShop(View view) {
         LiveDataBus.get().with("rjp", String.class).postValue("你好啊");
-    }
-
-    @Override
-    public RefreshHelper createRefreshHelper() {
-        SwipeRefreshLayout refreshLayout = findViewById(R.id.refresh_layout);
-        return RefreshHelper.createRefreshHelper(refreshLayout);
-    }
-
-    @Override
-    public RecyclerView createRecyclerView() {
-        return findViewById(R.id.recycler_view);
-    }
-
-    @Override
-    public View createEmptyView() {
-        return findViewById(R.id.stub_empty_view);
-    }
-
-    @Override
-    public RViewAdapter<String> createRecyclerViewAdapter() {
-        strings = new ArrayList<>();
-        strings.add("");
-        strings.add("");
-
-        return new RViewAdapter<>(strings, new RViewItem<String>() {
-            @Override
-            public int getItemLayout() {
-                return R.layout.item_list_view;
-            }
-
-            @Override
-            public boolean isItemView(String entity, int position) {
-                return true;
-            }
-
-            @Override
-            public void convert(RViewHolder holder, String entity, int position) {
-                TextView tvTitle = holder.getView(R.id.tv_title);
-                tvTitle.setText(entity + "|" + position + "|" + "这是第几个元素啊");
-            }
-        });
-    }
-
-    @Override
-    public void onRefresh() {
-        IOkHttp.post("", "", new CallbackListener<List<String>>() {
-            @Override
-            public void onSuccess(List<String> model) {
-
-            }
-
-            @Override
-            public void onFailure() {
-
-            }
-        });
-    }
-
-    @Override
-    public void onLoadMore() {
-        ArrayList<String> datas = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            datas.add(String.valueOf(new Random().nextInt(100)));
-        }
-        helper.notifyData(null);
     }
 }
