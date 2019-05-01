@@ -8,6 +8,19 @@
     android:orientation="vertical"
     tools:context="com.rjp.fastframework.component.ComponentActivity"
     >
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载apk"
+        android:onClick="loadApk"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转插件页面"
+        android:onClick="skipApk"
+        />
 
     <Button
         android:layout_width="match_parent"

@@ -24,8 +24,11 @@ import com.rjp.expandframework.baseRecycler.inteface.RViewItem;
 import com.rjp.expandframework.liveDataBus.LiveDataBus;
 import com.rjp.expandframework.okhttp.CallbackListener;
 import com.rjp.expandframework.okhttp.IOkHttp;
+import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.fastframework.R;
 import com.rjp.fastframework.Hello;
+import com.rjp.pluginlib.PluginManager;
+import com.rjp.pluginlib.ProxyActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +48,7 @@ public class ComponentActivity extends AppCompatActivity{
 
         ScrollView scrollView = new ScrollView(this);
 
+        PluginManager.getInstance().init(this);
     }
 
     public void login(View view) {
@@ -56,6 +60,18 @@ public class ComponentActivity extends AppCompatActivity{
     }
 
     public void loadShop(View view) {
-        LiveDataBus.get().with("rjp", String.class).postValue("你好啊");
+//        LiveDataBus.get().with("rjp", String.class).postValue("你好啊");
+    }
+
+    public void loadApk(View view) {
+        String apkPath = FileUtil.copyAssetsToSD(this, "plugin.apk");
+        PluginManager.getInstance().loadApk(apkPath);
+    }
+
+    public void skipApk(View view) {
+        Intent intent = new Intent();
+        intent.setClass(this, ProxyActivity.class);
+        intent.putExtra("className", "com.rjp.pluginapk.ExtraActivity");
+        startActivity(intent);
     }
 }

@@ -1,1 +1,1 @@
-include ':app', ':expandframework', ':logincomponent', ':shopcomponent', ':commonlib'
+include ':app', ':expandframework', ':logincomponent', ':shopcomponent', ':commonlib', ':pluginlib', ':pluginapk'

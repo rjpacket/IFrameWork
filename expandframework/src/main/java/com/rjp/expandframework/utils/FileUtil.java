@@ -12,6 +12,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
+import android.text.TextUtils;
 
 import com.rjp.expandframework.BuildConfig;
 
@@ -19,6 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * author : Gimpo create on 2018/12/10 16:01
@@ -176,6 +178,45 @@ public class FileUtil {
 
     /*---------------------------------------------以下为工具-------------------------------------------------*/
 
+    public static String copyAssetsToSD(Context context, String fileName) {
+        FileOutputStream fos = null;
+        InputStream inputStream = null;
+        try {
+            String appApksPath = getAppApksPath(context);
+            if (!TextUtils.isEmpty(appApksPath)) {
+                File outFile = new File(appApksPath, fileName);
+                fos = new FileOutputStream(outFile);
+
+                inputStream = context.getAssets().open(fileName);
+                byte[] buffer = new byte[inputStream.available()];
+                int byteCount;
+                while ((byteCount = inputStream.read(buffer)) != -1) {
+                    fos.write(buffer, 0, byteCount);
+                }
+                fos.flush();
+                return outFile.getAbsolutePath();
+            }
+        } catch (Exception e) {
+
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
     /**
      * 保存一张图片
      *
@@ -207,6 +248,7 @@ public class FileUtil {
 
     /**
      * 一个版本只有一个更新文件
+     *
      * @param context
      * @return
      */
@@ -216,6 +258,7 @@ public class FileUtil {
 
     /**
      * 获取文件的uri
+     *
      * @param file
      * @return
      */
@@ -286,7 +329,7 @@ public class FileUtil {
                     path = getDataColumn(context, contentUri, selection, selectionArgs);
                     return path;
                 }
-            }else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            } else if ("content".equalsIgnoreCase(uri.getScheme())) {
                 // Return the remote address
                 if (isGooglePhotosUri(uri)) return uri.getLastPathSegment();
                 return getDataColumn(context, uri, null, null);
