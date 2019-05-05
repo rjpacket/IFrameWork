@@ -21,6 +21,9 @@ import com.rjp.expandframework.baseRecycler.base.RViewAdapter;
 import com.rjp.expandframework.baseRecycler.helper.RefreshHelper;
 import com.rjp.expandframework.baseRecycler.holder.RViewHolder;
 import com.rjp.expandframework.baseRecycler.inteface.RViewItem;
+import com.rjp.expandframework.function.FunctionHasParamNoResult;
+import com.rjp.expandframework.function.FunctionManager;
+import com.rjp.expandframework.function.FunctionNoParamHasResult;
 import com.rjp.expandframework.liveDataBus.LiveDataBus;
 import com.rjp.expandframework.okhttp.CallbackListener;
 import com.rjp.expandframework.okhttp.IOkHttp;
@@ -49,6 +52,25 @@ public class ComponentActivity extends AppCompatActivity{
         ScrollView scrollView = new ScrollView(this);
 
         PluginManager.getInstance().init(this);
+
+        FunctionManager.getInstance().addFunction(new FunctionNoParamHasResult<List<String>>("getUser") {
+            @Override
+            public List<String> function() {
+                List<String> data = new ArrayList<>();
+                data.add("1");
+                data.add("2");
+                data.add("3");
+                data.add("4");
+                return data;
+            }
+        });
+
+        FunctionManager.getInstance().addFunction(new FunctionHasParamNoResult<String>("getUserDetail") {
+            @Override
+            public void function(String str) {
+
+            }
+        });
     }
 
     public void login(View view) {
