@@ -16,11 +16,13 @@ import android.text.TextUtils;
 
 import com.rjp.expandframework.BuildConfig;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * author : Gimpo create on 2018/12/10 16:01
@@ -369,5 +371,33 @@ public class FileUtil {
 
     public static boolean isGooglePhotosUri(Uri uri) {
         return "com.google.android.apps.photos.content".equals(uri.getAuthority());
+    }
+
+    public static String openAssets(Context context, String fileName){
+        InputStream inputStream = null;
+        BufferedReader reader = null;
+        StringBuilder sb = new StringBuilder();
+        try {
+            inputStream = context.getAssets().open(fileName);
+            reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
     }
 }
