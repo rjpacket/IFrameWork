@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: '../apk.gradle'
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
@@ -73,6 +74,12 @@ android {
         ndk {
             moduleName "hello"
 //            abiFilters "armeabi", "armeabi-v7a"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
         }
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -168,11 +175,18 @@ dependencies {
         implementation project(':shopcomponent')
     }
     implementation project(':commonlib')
-
     // Okhttp库
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     // Retrofit库
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation project(path: ':pluginlib')
+    implementation project(':Annotation')
+    annotationProcessor project(':Complier')
+
+//    implementation 'com.cmonbaby:NetEase_Permission_Complier:1.1.1'
+//    implementation 'com.cmonbaby:NetEase_Permission_Library:1.1.1'
+
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

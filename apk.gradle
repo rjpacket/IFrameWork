@@ -1,0 +1,11 @@
+
+task autoApk{
+    dependsOn 'assembleDebug'
+
+    doLast{
+        copy{
+            from "../app/build/outputs/apk/channel_A/debug/app-channel_A-debug.apk"
+            into "d:/Temp"
+        }
+    }
+}

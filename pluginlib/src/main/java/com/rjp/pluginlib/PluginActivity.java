@@ -7,6 +7,14 @@ import android.os.Bundle;
 public class PluginActivity extends Activity implements IPlugin {
 
     private int mFrom = FROM_SYSTEM;
+
+    public Activity getContext() {
+        if(mFrom == FROM_SYSTEM){
+            return this;
+        }
+        return mProxyActivity;
+    }
+
     //插件的上下文
     private Activity mProxyActivity;
 

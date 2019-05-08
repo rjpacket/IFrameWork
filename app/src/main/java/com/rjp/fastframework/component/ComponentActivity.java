@@ -34,47 +34,27 @@ import com.rjp.pluginlib.PluginManager;
 import com.rjp.pluginlib.ProxyActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class ComponentActivity extends AppCompatActivity{
 
     private ArrayList<String> strings;
-    private FloatLayout floatLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_component);
 
-        floatLayout = findViewById(R.id.float_layout);
 
         ScrollView scrollView = new ScrollView(this);
 
         PluginManager.getInstance().init(this);
-
-        FunctionManager.getInstance().addFunction(new FunctionNoParamHasResult<List<String>>("getUser") {
-            @Override
-            public List<String> function() {
-                List<String> data = new ArrayList<>();
-                data.add("1");
-                data.add("2");
-                data.add("3");
-                data.add("4");
-                return data;
-            }
-        });
-
-        FunctionManager.getInstance().addFunction(new FunctionHasParamNoResult<String>("getUserDetail") {
-            @Override
-            public void function(String str) {
-
-            }
-        });
     }
 
     public void login(View view) {
-        floatLayout.addBean(new FloatBean());
     }
 
     public void shop(View view) {

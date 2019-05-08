@@ -1,6 +1,6 @@
-if(loginRunAlone.toBoolean()){
+if (loginRunAlone.toBoolean()) {
     apply plugin: 'com.android.application'
-}else{
+} else {
     apply plugin: 'com.android.library'
 }
 
@@ -10,7 +10,7 @@ android {
 
 
     defaultConfig {
-        if(loginRunAlone.toBoolean()) {
+        if (loginRunAlone.toBoolean()) {
             applicationId "com.rjp.logincomponent"
         }
         minSdkVersion min_sdk_version.toInteger()
@@ -22,7 +22,7 @@ android {
 
     }
 
-    sourceSets{
+    sourceSets {
         main {
             if (loginRunAlone.toBoolean()) {
                 manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
@@ -48,4 +48,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':commonlib')
+    implementation project(path: ':Annotation')
+    implementation project(path: ':expandframework')
 }

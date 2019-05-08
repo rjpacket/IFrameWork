@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.rjp.annotation.Route;
 import com.rjp.commonlib.ServiceFactory;
 
+@Route(path = "/login/login")
 public class LoginActivity extends Activity {
 
     @Override

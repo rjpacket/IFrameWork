@@ -43,7 +43,7 @@
         </activity>
         <activity android:name=".component.ComponentActivity" />
         <activity android:name=".component.NextActivity" />
-        <activity android:name=".TestAnimActivity"></activity>
+        <activity android:name=".TestAnimActivity" />
         <activity android:name=".PermissionActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
@@ -52,7 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VideoViewActivity"></activity>
+        <activity android:name=".VideoViewActivity" />
+        <activity android:name=".MvvmActivity"></activity>
     </application>
 
 </manifest>

@@ -2,5 +2,13 @@
   {
    "clazz": "com.rjp.fastframework.PermissionActivity",
    "buttonTxt": "权限申请"
+  },
+  {
+    "clazz": "com.rjp.fastframework.component.ComponentActivity",
+    "buttonTxt": "插件化"
+  },
+  {
+    "clazz": "com.rjp.fastframework.MvvmActivity",
+    "buttonTxt": "MVVM"
   }
 ]

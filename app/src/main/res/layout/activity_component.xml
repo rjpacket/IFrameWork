@@ -22,22 +22,5 @@
         android:onClick="skipApk"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="start"
-        android:onClick="login"
-        />
-
-
-    <com.rjp.fastframework.component.FloatLayout
-        android:id="@+id/float_layout"
-        android:layout_width="match_parent"
-        android:background="#e7cccc"
-        android:layout_height="300dp">
-
-    </com.rjp.fastframework.component.FloatLayout>
-
-
 
 </LinearLayout>

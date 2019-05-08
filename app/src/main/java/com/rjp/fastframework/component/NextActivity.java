@@ -1,6 +1,12 @@
 package com.rjp.fastframework.component;
 
+import android.arch.lifecycle.CompositeGeneratedAdaptersObserver;
+import android.arch.lifecycle.GenericLifecycleObserver;
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.LifecycleObserver;
+import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.SingleGeneratedAdapterObserver;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +46,8 @@ public class NextActivity extends AppCompatActivity {
             }
         };
         LiveDataBus.get().with("rjp", String.class).observeForever(observer);
+
+        getLifecycle().addObserver(new LifecycleData());
     }
 
     @Override
