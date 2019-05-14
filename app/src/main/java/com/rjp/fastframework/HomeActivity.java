@@ -22,6 +22,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 
 public class HomeActivity extends Activity {
 
@@ -83,6 +90,53 @@ public class HomeActivity extends Activity {
                 }
             }
         });
+
+        Observable.timer(2, TimeUnit.SECONDS)
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long value) {
+                        System.out.println(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.println("onComplete");
+                    }
+                });
+
+        Observable.interval(1, TimeUnit.SECONDS)
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long value) {
+                        System.out.println("------" + value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 
     public class HomeBean{

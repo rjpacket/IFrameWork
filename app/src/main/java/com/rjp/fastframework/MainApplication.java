@@ -25,9 +25,13 @@ import com.squareup.leakcanary.LeakCanary;
  */
 public class MainApplication extends Application implements IAppInit {
 
+    public static Application INSTANCE;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        INSTANCE = this;
 
         init(this);
 

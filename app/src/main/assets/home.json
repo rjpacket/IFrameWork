@@ -8,7 +8,7 @@
     "buttonTxt": "插件化"
   },
   {
-    "clazz": "com.rjp.fastframework.MvvmActivity",
+    "clazz": "com.rjp.fastframework.mvvm.MvvmActivity",
     "buttonTxt": "MVVM"
   }
 ]

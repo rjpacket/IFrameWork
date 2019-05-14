@@ -53,7 +53,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".VideoViewActivity" />
-        <activity android:name=".MvvmActivity"></activity>
+        <activity android:name=".mvvm.MvvmActivity" />
+        <activity android:name=".mvvm.MvvmSecondActivity"></activity>
     </application>
 
 </manifest>
