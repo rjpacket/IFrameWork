@@ -18,6 +18,9 @@ import com.rjp.expandframework.interfaces.ImageLoader;
 import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
 import com.squareup.leakcanary.LeakCanary;
+import com.tencent.tinker.entry.ApplicationLike;
+import com.tinkerpatch.sdk.TinkerPatch;
+import com.tinkerpatch.sdk.loader.TinkerPatchApplicationLike;
 
 /**
  * author : Gimpo create on 2018/11/5 18:14
@@ -26,10 +29,12 @@ import com.squareup.leakcanary.LeakCanary;
 public class MainApplication extends Application implements IAppInit {
 
     public static Application INSTANCE;
+    private ApplicationLike tinkerApplicationLike;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        initTinker();
 
         INSTANCE = this;
 
@@ -77,6 +82,21 @@ public class MainApplication extends Application implements IAppInit {
         LeakCanary.install(this);
 
         setCustomDensity(null, this);
+    }
+
+    private void initTinker() {
+        // 我们可以从这里获得Tinker加载过程的信息
+        tinkerApplicationLike = TinkerPatchApplicationLike.getTinkerPatchApplicationLike();
+
+        // 初始化TinkerPatch SDK, 更多配置可参照API章节中的,初始化SDK
+        TinkerPatch.init(tinkerApplicationLike)
+                .reflectPatchLibrary()
+                .setPatchRollbackOnScreenOff(true)
+                .setPatchRestartOnSrceenOff(true)
+                .setFetchPatchIntervalByHours(3);
+
+        // 每隔3个小时(通过setFetchPatchIntervalByHours设置)去访问后台时候有更新,通过handler实现轮训的效果
+        TinkerPatch.with().fetchPatchUpdateAndPollWithInterval();
     }
 
     private static float sNoncompatDensity;
