@@ -9,6 +9,10 @@
   },
   {
     "clazz": "com.rjp.fastframework.mvvm.MvvmActivity",
-    "buttonTxt": "MVVM1"
+    "buttonTxt": "MVVM"
+  },
+  {
+    "clazz": "com.rjp.fastframework.RVActivity",
+    "buttonTxt": "Recycler View"
   }
 ]

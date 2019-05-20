@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f9f9f9"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#f9f9f9"
     >
+
+    <com.rjp.expandframework.views.RoundImageView
+        android:id="@+id/riv_image_view"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:border_color="#a94fe1"
+        app:border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:radius="10dp"
+        />
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/riv_image_view"
+        app:layout_constraintTop_toTopOf="parent"
         >
-        <com.rjp.expandframework.views.RoundImageView
-            android:id="@+id/riv_image_view"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            app:radius="10dp"
-            app:border_width="0dp"
-            app:border_color="#a94fe1"
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好啊你好啊你好啊"
+            android:textColor="#333333"
+            android:textSize="16sp"
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="你好啊你好啊你好啊"
-                android:textColor="#333333"
-                android:textSize="16sp"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
+            android:layout_marginTop="16dp"
+            android:text="一点小标题"
+            />
     </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
