@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.rjp.commonlib.ApplicationConfig;
 import com.rjp.commonlib.IAppInit;
+import com.rjp.expandframework.aop.TimeLog;
 import com.rjp.expandframework.interfaces.ImageLoader;
 import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
@@ -31,6 +32,7 @@ public class MainApplication extends Application implements IAppInit {
     public static Application INSTANCE;
     private ApplicationLike tinkerApplicationLike;
 
+    @TimeLog(tag = "MainApplication")
     @Override
     public void onCreate() {
         super.onCreate();
