@@ -21,13 +21,12 @@ public class RViewAdapter<T> extends RecyclerView.Adapter<RViewHolder> {
 
     private List<T> datas;
 
-    public RViewAdapter(List<T> datas, RViewItem<T> item){
-        if(datas == null){
+    public RViewAdapter(List<T> datas) {
+        if (datas == null) {
             this.datas = new ArrayList<>();
         }
         this.datas = datas;
         itemManager = new RViewItemManager<>();
-        addItemStyles(item);
     }
 
 
@@ -41,7 +40,7 @@ public class RViewAdapter<T> extends RecyclerView.Adapter<RViewHolder> {
         holder.getmCurrentView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(itemListener != null){
+                if (itemListener != null) {
                     itemListener.onItemClick(holder.getmCurrentView(), datas.get(holder.getAdapterPosition()), holder.getAdapterPosition());
                 }
             }
@@ -61,37 +60,37 @@ public class RViewAdapter<T> extends RecyclerView.Adapter<RViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        if(hasMultiStyle()){
+        if (hasMultiStyle()) {
             return itemManager.getRViewItemType(datas.get(position), position);
         }
         return super.getItemViewType(position);
     }
 
-    private boolean hasMultiStyle(){
-        return itemManager.getItemViewStylesCount() > 1;
+    private boolean hasMultiStyle() {
+        return itemManager.getItemViewStylesCount() > 0;
     }
 
     public void setItemListener(ItemListener<T> itemListener) {
         this.itemListener = itemListener;
     }
 
-    public void addDatas(List<T> datas){
-        if(datas == null){
+    public void addDatas(List<T> datas) {
+        if (datas == null) {
             return;
         }
         this.datas.addAll(datas);
         notifyDataSetChanged();
     }
 
-    public void updateDatas(List<T> datas){
-        if(datas == null){
+    public void updateDatas(List<T> datas) {
+        if (datas == null) {
             return;
         }
         this.datas = datas;
         notifyDataSetChanged();
     }
 
-    private void addItemStyles(RViewItem<T> item) {
+    public void addItemStyles(RViewItem<T> item) {
         itemManager.addStyles(item);
     }
 }

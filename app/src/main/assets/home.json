@@ -10,5 +10,9 @@
   {
     "clazz": "com.rjp.fastframework.mvvm.MvvmActivity",
     "buttonTxt": "MVVM"
+  },
+  {
+    "clazz": "com.rjp.fastframework.RVActivity",
+    "buttonTxt": "Recycler View"
   }
 ]
