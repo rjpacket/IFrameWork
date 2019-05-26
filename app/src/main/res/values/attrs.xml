@@ -6,7 +6,7 @@
         <attr name="round_dx" format="dimension" />
         <attr name="round_dy" format="dimension" />
         <attr name="round_border_radius" format="dimension" />
-        <attr name="round_border_color" format="dimension" />
+        <attr name="round_border_color" format="color" />
         <attr name="round_border_width" format="dimension" />
         <attr name="round_shadow_sides" format="flags">
             <flag name="LEFT" value="1" />
