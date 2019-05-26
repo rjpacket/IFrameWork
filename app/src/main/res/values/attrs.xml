@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundLayout">
+        <attr name="round_shadow_color" format="color" />
+        <attr name="round_shadow_width" format="dimension" />
+        <attr name="round_dx" format="dimension" />
+        <attr name="round_dy" format="dimension" />
+        <attr name="round_border_radius" format="dimension" />
+        <attr name="round_border_color" format="dimension" />
+        <attr name="round_border_width" format="dimension" />
+        <attr name="round_shadow_sides" format="flags">
+            <flag name="LEFT" value="1" />
+            <flag name="TOP" value="2" />
+            <flag name="RIGHT" value="4" />
+            <flag name="BOTTOM" value="8" />
+            <flag name="ALL" value="15" />
+        </attr>
+    </declare-styleable>
+</resources>
