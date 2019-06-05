@@ -14,5 +14,9 @@
   {
     "clazz": "com.rjp.fastframework.RVActivity",
     "buttonTxt": "Recycler View"
+  },
+  {
+    "clazz": "com.rjp.fastframework.LogActivity",
+    "buttonTxt": "日志记录"
   }
 ]

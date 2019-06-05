@@ -74,8 +74,8 @@ public class QuickTabLayout extends LinearLayout {
     private void initView(Context context, AttributeSet attrs) {
         mContext = context;
         LayoutInflater.from(mContext).inflate(R.layout.layout_quick_tab_layout, this);
-        horizontalScrollView = (MyHorizontalScrollView) findViewById(R.id.horizontal_scroll_view);
-        llTabContainer = (LinearLayout) findViewById(R.id.ll_tab_container);
+        horizontalScrollView = findViewById(R.id.horizontal_scroll_view);
+        llTabContainer = findViewById(R.id.ll_tab_container);
         indicatorView = findViewById(R.id.indicator);
         screenWidth = context.getResources().getDisplayMetrics().widthPixels;
         horizontalScrollView.setOnHorizontalScrollListener(new MyHorizontalScrollView.OnHorizontalScrollListener() {
@@ -334,14 +334,9 @@ public class QuickTabLayout extends LinearLayout {
             public void onAnimationEnd(Animator animation) {
                 checkScroll();
 
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(onQuickTabClickListener != null){
-                            onQuickTabClickListener.onTabClick(selectedIndex);
-                        }
-                    }
-                }, 300);
+                if(onQuickTabClickListener != null){
+                    onQuickTabClickListener.onTabClick(selectedIndex);
+                }
             }
 
             @Override

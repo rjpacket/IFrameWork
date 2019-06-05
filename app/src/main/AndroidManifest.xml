@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rjp.fastframework">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -10,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RVActivity"></activity>
+        <activity android:name=".LogActivity"></activity>
+        <activity android:name=".RVActivity" />
 
         <meta-data
             android:name="UMENG_CHANNEL"
@@ -57,6 +59,21 @@
         <activity android:name=".VideoViewActivity" />
         <activity android:name=".mvvm.MvvmActivity" />
         <activity android:name=".mvvm.MvvmSecondActivity" />
+
+        <service android:name=".keepLive.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+
+        <service
+            android:name=".keepLive.LiveService"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:process=":receiver"
+            >
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

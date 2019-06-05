@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.rjp.expandframework.BuildConfig;
 
@@ -30,6 +31,7 @@ import java.io.InputStreamReader;
  */
 public class FileUtil {
     public static final String IMAGES_DIR = "images";
+    public static final String LOGS_DIR = "logs";
     public static final String APKS_DIR = "apks";
 
     /**
@@ -164,6 +166,18 @@ public class FileUtil {
      */
     public static String getAppImagesPath(Context context) {
         File file = createNewDir(new File(getStorageCacheDirectory(context), IMAGES_DIR));
+        return file == null ? "" : file.getAbsolutePath();
+    }
+
+    /**
+     * 获取存储app Log的文件路径
+     *
+     * @param context
+     * @return
+     */
+    public static String getAppLogsPath(Context context) {
+        File file = createNewDir(new File(FileUtil.getStorageCacheDirectory(context), LOGS_DIR));
+        Log.d("===getAppLogsPath===>", file.getAbsolutePath());
         return file == null ? "" : file.getAbsolutePath();
     }
 

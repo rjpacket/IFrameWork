@@ -47,7 +47,10 @@
     3.1 加载时隐藏的布局利用Stub延迟载入 优化时间 -150ms
     3.2 延迟一个极短时间加载布局  - 300ms
     
-### 四、 
+    
+    url = dolly://hy/url?url=http%3A%2F%2Fbeiins.com%2ForderDetail%3ForderNo%3DCC_ALIAN20190530203354ab007%26pageTitle%3D%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85%26hybridid%3Dnb_imall%26loadview%3Dhold&type=navibar-normal&navigation=%7B%22color%22%3A%7B%22backgroundColor%22%3A%22%23F0F3F5%22%7D%2C%22left%22%3A%7B%22style%22%3A%22text%22%2C%22text%22%3A%22%22%7D%7D&name=nb_imall_index
+    
+
 
 
 

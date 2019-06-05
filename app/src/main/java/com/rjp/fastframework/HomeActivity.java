@@ -1,5 +1,6 @@
 package com.rjp.fastframework;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,20 +16,13 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.rjp.expandframework.interfaces.PermissionCallback;
+import com.rjp.expandframework.log.LogCallback;
+import com.rjp.expandframework.log.OkLog;
 import com.rjp.expandframework.utils.FileUtil;
+import com.rjp.expandframework.utils.PermissionUtil;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 
 public class HomeActivity extends Activity {
 
@@ -41,6 +35,22 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
 
         mContext = this;
+
+        new PermissionUtil.Builder()
+                .context(this)
+                .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .build()
+                .request(new PermissionCallback() {
+                    @Override
+                    public void allow() {
+
+                    }
+
+                    @Override
+                    public void deny() {
+
+                    }
+                });
 
         String homeJson = FileUtil.openAssets(this, "home.json");
         Gson gson = new Gson();

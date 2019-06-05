@@ -7,10 +7,6 @@ import android.widget.HorizontalScrollView;
 public class MyHorizontalScrollView extends HorizontalScrollView {
     public OnHorizontalScrollListener onScrollListener;
 
-    /**
-     * 主要是用在用户手指离开MyScrollView，MyScrollView还在继续滑动，我们用来保存Y的距离，然后做比较
-     */
-
     public MyHorizontalScrollView(Context context) {
         this(context, null);
 
