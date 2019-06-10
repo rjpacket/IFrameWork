@@ -10,6 +10,9 @@ import android.os.IBinder;
 
 import com.rjp.fastframework.R;
 
+/**
+ * 灰色保活  提升进程优先级
+ */
 public class KeepLiveService extends Service {
 
     public static final int NOTIFICATION_ID = 0x11;
@@ -49,6 +52,7 @@ public class KeepLiveService extends Service {
             //发送与KeepLiveService中ID相同的Notification，然后将其取消并取消自己的前台显示
             Notification.Builder builder = new Notification.Builder(this);
             builder.setSmallIcon(R.mipmap.ic_launcher);
+            builder.setContentTitle("app正在持续为您服务...");
             startForeground(NOTIFICATION_ID, builder.build());
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -58,7 +62,7 @@ public class KeepLiveService extends Service {
                     manager.cancel(NOTIFICATION_ID);
                     stopSelf();
                 }
-            }, 100);
+            }, 500);
 
         }
     }

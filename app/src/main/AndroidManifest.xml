@@ -65,14 +65,30 @@
 
         </service>
 
-        <service
-            android:name=".keepLive.LiveService"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-            android:process=":receiver"
-            >
+        <service android:name=".keepLive.KeepLiveService"
+            android:exported="true">
+
+        </service>
+        <service android:name=".keepLive.KeepLiveService$InnerService"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
+                <action android:name="com.rjp.keeplive.service.inner" />
             </intent-filter>
+        </service>
+
+        <service android:name=".keepLive.core.LocalService"/>
+
+        <service
+            android:name=".keepLive.core.RemoteService"
+            android:process=":remoteprocess" />
+
+        <service android:name=".keepLive.core.JobHandleService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <service android:name=".keepLive.music.MusicService"
+            android:enabled="true"
+            android:exported="true">
+
         </service>
     </application>
 

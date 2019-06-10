@@ -207,4 +207,6 @@ dependencies {
     compileOnly "com.tinkerpatch.tinker:tinker-android-anno:1.9.13"
     implementation "com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.2.13"
     annotationProcessor "com.tinkerpatch.tinker:tinker-android-anno:1.9.13"
+
+    implementation 'com.vise.xiaoyaoyou:viselog:1.0.0'
 }

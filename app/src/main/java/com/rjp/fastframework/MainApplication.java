@@ -20,8 +20,7 @@ import com.rjp.expandframework.interfaces.ImageLoader;
 import com.rjp.expandframework.log.LogFileManager;
 import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
-import com.rjp.fastframework.keepLive.LiveService;
-import com.rjp.fastframework.keepLive.MyJobService;
+import com.rjp.fastframework.keepLive.KeepLiveService;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.tinker.entry.ApplicationLike;
 import com.tinkerpatch.sdk.TinkerPatch;
@@ -91,7 +90,9 @@ public class MainApplication extends Application implements IAppInit {
 
         setCustomDensity(null, this);
 
-        startService(new Intent(this, LiveService.class));
+//        startService(new Intent(this, LocalService.class));
+//        startService(new Intent(this, RemoteService.class));
+        startService(new Intent(this, KeepLiveService.class));
     }
 
     private void initTinker() {
