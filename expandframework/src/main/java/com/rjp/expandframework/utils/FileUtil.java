@@ -31,6 +31,7 @@ import java.io.InputStreamReader;
  */
 public class FileUtil {
     public static final String IMAGES_DIR = "images";
+    public static final String IMAGES_CACHE_DIR = "images_cache";
     public static final String LOGS_DIR = "logs";
     public static final String APKS_DIR = "apks";
 
@@ -169,6 +170,11 @@ public class FileUtil {
         return file == null ? "" : file.getAbsolutePath();
     }
 
+    public static String getCacheImagesPath(Context context) {
+        File file = createNewDir(new File(getStorageCacheDirectory(context), IMAGES_CACHE_DIR));
+        return file == null ? "" : file.getAbsolutePath();
+    }
+
     /**
      * 获取存储app Log的文件路径
      *
@@ -240,7 +246,7 @@ public class FileUtil {
      * @param bitmap
      * @param imageName
      */
-    public static void saveBitmap(Context context, Bitmap bitmap, String imageName) {
+    public static String saveBitmap(Context context, Bitmap bitmap, String imageName) {
         FileOutputStream fos = null;
         String mFilePath = FileUtil.getAppImagesPath(context) + File.separator + imageName;
         File tempFile = new File(mFilePath);
@@ -260,6 +266,7 @@ public class FileUtil {
                 }
             }
         }
+        return mFilePath;
     }
 
     /**

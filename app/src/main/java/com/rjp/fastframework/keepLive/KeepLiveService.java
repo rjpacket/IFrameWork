@@ -50,16 +50,16 @@ public class KeepLiveService extends Service {
         public void onCreate() {
             super.onCreate();
             //发送与KeepLiveService中ID相同的Notification，然后将其取消并取消自己的前台显示
-            Notification.Builder builder = new Notification.Builder(this);
-            builder.setSmallIcon(R.mipmap.ic_launcher);
-            builder.setContentTitle("app正在持续为您服务...");
-            startForeground(NOTIFICATION_ID, builder.build());
+//            Notification.Builder builder = new Notification.Builder(this);
+//            builder.setSmallIcon(R.mipmap.ic_launcher);
+//            builder.setContentTitle("app正在持续为您服务...");
+            startForeground(NOTIFICATION_ID, new Notification());
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     stopForeground(true);
-                    NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                    manager.cancel(NOTIFICATION_ID);
+//                    NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//                    manager.cancel(NOTIFICATION_ID);
                     stopSelf();
                 }
             }, 500);

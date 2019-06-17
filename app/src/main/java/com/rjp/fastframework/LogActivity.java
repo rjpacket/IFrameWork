@@ -2,13 +2,17 @@ package com.rjp.fastframework;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.rjp.expandframework.bitmap.OkBitmap;
 import com.rjp.expandframework.log.LogCallback;
 import com.rjp.expandframework.log.OkLog;
 import com.rjp.expandframework.utils.FileUtil;
@@ -32,8 +36,13 @@ import java.util.concurrent.TimeUnit;
 
 public class LogActivity extends AppCompatActivity {
 
+    public static final String IMG = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1092143506,45115176&fm=26&gp=0.jpg";
+
     private Context mContext;
     private ThreadPoolExecutor mThreadPoolExecutor;
+    private ImageView iv01;
+    private ImageView iv02;
+    private ImageView iv03;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +67,40 @@ public class LogActivity extends AppCompatActivity {
                 }
         );
 
-        mThreadPoolExecutor.execute(thread1);
-        mThreadPoolExecutor.execute(thread2);
+//        mThreadPoolExecutor.execute(thread1);
+//        mThreadPoolExecutor.execute(thread2);
+
+        iv01 = findViewById(R.id.iv_01);
+        iv01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OkBitmap.load(mContext, iv01, IMG);
+            }
+        });
+
+        iv02 = findViewById(R.id.iv_02);
+        iv02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OkBitmap.load(mContext, iv02, IMG);
+            }
+        });
+
+        iv03 = findViewById(R.id.iv_03);
+        iv03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OkBitmap.load(mContext, iv03, IMG);
+            }
+        });
     }
+
+    public Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            return false;
+        }
+    });
 
     public Runnable thread1 = new Runnable() {
 
