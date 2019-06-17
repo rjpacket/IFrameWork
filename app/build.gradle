@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply from: '../apk.gradle'
-apply from: 'tinker.gradle'
+apply from: 'tinker-support.gradle'
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
@@ -201,12 +201,13 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:1.1.1"
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 
-    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
-    compileOnly "com.tinkerpatch.tinker:tinker-android-anno:1.9.13"
-    implementation "com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.2.13"
-    annotationProcessor "com.tinkerpatch.tinker:tinker-android-anno:1.9.13"
+    implementation "com.android.support:multidex:1.0.3" // 多dex配置
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.0'
+    implementation 'com.tencent.bugly:nativecrashreport:3.3.1'
+    implementation 'com.tencent.tinker:tinker-android-lib:1.9.9'
 
     implementation 'com.vise.xiaoyaoyou:viselog:1.0.0'
 }

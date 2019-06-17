@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
+import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 import android.widget.ImageView;
 
@@ -22,9 +23,9 @@ import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
 import com.rjp.fastframework.keepLive.KeepLiveService;
 import com.squareup.leakcanary.LeakCanary;
+import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
 import com.tencent.tinker.entry.ApplicationLike;
-import com.tinkerpatch.sdk.TinkerPatch;
-import com.tinkerpatch.sdk.loader.TinkerPatchApplicationLike;
 
 /**
  * author : Gimpo create on 2018/11/5 18:14
@@ -39,7 +40,6 @@ public class MainApplication extends Application implements IAppInit {
     @Override
     public void onCreate() {
         super.onCreate();
-        initTinker();
 
         INSTANCE = this;
 
@@ -93,21 +93,19 @@ public class MainApplication extends Application implements IAppInit {
 //        startService(new Intent(this, LocalService.class));
 //        startService(new Intent(this, RemoteService.class));
         startService(new Intent(this, KeepLiveService.class));
+
+        Bugly.init(this, "892d945f22", false);
     }
 
-    private void initTinker() {
-        // 我们可以从这里获得Tinker加载过程的信息
-        tinkerApplicationLike = TinkerPatchApplicationLike.getTinkerPatchApplicationLike();
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        // you must install multiDex whatever tinker is installed!
+        MultiDex.install(base);
 
-        // 初始化TinkerPatch SDK, 更多配置可参照API章节中的,初始化SDK
-        TinkerPatch.init(tinkerApplicationLike)
-                .reflectPatchLibrary()
-                .setPatchRollbackOnScreenOff(true)
-                .setPatchRestartOnSrceenOff(true)
-                .setFetchPatchIntervalByHours(3);
 
-        // 每隔3个小时(通过setFetchPatchIntervalByHours设置)去访问后台时候有更新,通过handler实现轮训的效果
-        TinkerPatch.with().fetchPatchUpdateAndPollWithInterval();
+        // 安装tinker
+        Beta.installTinker();
     }
 
     private static float sNoncompatDensity;
