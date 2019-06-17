@@ -21,7 +21,7 @@ public class HttpHelper implements IHttpProcessor{
     }
 
     @Override
-    public void post(String url, Map<String, Object> params, ICallback callBack) {
+    public void post(String url, Map<String, String> params, ICallback callBack) {
 //        String finalUrl = appendParams(url, params);
         mIHttpProcessor.post(url, params, callBack);
     }

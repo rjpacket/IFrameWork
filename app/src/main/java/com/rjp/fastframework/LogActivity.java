@@ -2,6 +2,9 @@ package com.rjp.fastframework;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.DhcpInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
@@ -9,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -93,6 +97,31 @@ public class LogActivity extends AppCompatActivity {
                 OkBitmap.load(mContext, iv03, IMG);
             }
         });
+
+        WifiManager wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        DhcpInfo wifiInfo = wifiManager.getDhcpInfo();
+        String ipAddress = intIP2StringIP(wifiInfo.gateway);//得到IPV4地址
+
+        final Button btn = findViewById(R.id.btn_text);
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                btn.setText("1");
+            }
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        btn.setText("2");
+    }
+
+    public static String intIP2StringIP(int ip) {
+        return (ip & 0xFF) + "." +
+                ((ip >> 8) & 0xFF) + "." +
+                ((ip >> 16) & 0xFF) + "." +
+                (ip >> 24 & 0xFF);
     }
 
     public Handler handler = new Handler(new Handler.Callback() {
