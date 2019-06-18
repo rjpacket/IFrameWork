@@ -95,6 +95,8 @@ public class MainApplication extends Application implements IAppInit {
         startService(new Intent(this, KeepLiveService.class));
 
         Bugly.init(this, "892d945f22", false);
+        //是否设置为开发设备
+        Bugly.setIsDevelopmentDevice(getApplicationContext(), true);
     }
 
     @Override
@@ -102,7 +104,6 @@ public class MainApplication extends Application implements IAppInit {
         super.attachBaseContext(base);
         // you must install multiDex whatever tinker is installed!
         MultiDex.install(base);
-
 
         // 安装tinker
         Beta.installTinker();

@@ -8,6 +8,7 @@ import com.rjp.expandframework.activitys.PermissionActivity;
 import com.rjp.expandframework.interfaces.PermissionCallback;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 请求权限构建者模式封装
@@ -64,7 +65,7 @@ public class PermissionUtil {
      *
      * @return
      */
-    public static String getNotice() {
+    public static String getNotice(List<String> permissions) {
         StringBuilder sb = new StringBuilder();
         sb.append("您的");
         if (permissions != null && permissions.size() > 0) {
@@ -73,7 +74,7 @@ public class PermissionUtil {
             }
             sb.deleteCharAt(sb.length() - 1);
         }
-        sb.append("已被手动禁止，需要去权限管理中打开。");
+        sb.append("已被禁止，需要去权限管理中打开。");
         return sb.toString();
     }
 
@@ -132,7 +133,7 @@ public class PermissionUtil {
             case Manifest.permission.READ_EXTERNAL_STORAGE:
                 return "读外部存储权限";
             case Manifest.permission.WRITE_EXTERNAL_STORAGE:
-                return "写外部存储权限";
+                return "存储权限";
         }
         return "未知权限";
     }

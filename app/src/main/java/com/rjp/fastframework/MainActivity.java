@@ -23,6 +23,7 @@ import com.rjp.expandframework.utils.update.AutoUpdateUtil;
 import com.rjp.expandframework.utils.update.UpdateStateCallback;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void deny() {
+                    public void deny(List<String> showDialog) {
 
                     }
                 });

@@ -15,6 +15,8 @@ import com.rjp.expandframework.utils.DialogUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
 
+import java.util.List;
+
 import static com.rjp.expandframework.activitys.ForResultActivity.TRANS_BUNDLE;
 
 public class SecondActivity extends Activity {
@@ -57,8 +59,8 @@ public class SecondActivity extends Activity {
                     }
 
                     @Override
-                    public void deny() {
-                        Toast.makeText(mContext, PermissionUtil.getNotice(), Toast.LENGTH_SHORT).show();
+                    public void deny(List<String> showDialog) {
+                        Toast.makeText(mContext, PermissionUtil.getNotice(showDialog), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

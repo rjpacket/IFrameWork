@@ -1,9 +1,9 @@
 package com.rjp.fastframework;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.DhcpInfo;
-import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.Message;
@@ -14,23 +14,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.rjp.expandframework.bitmap.OkBitmap;
-import com.rjp.expandframework.log.LogCallback;
-import com.rjp.expandframework.log.OkLog;
+import com.rjp.expandframework.interfaces.PermissionCallback;
+import com.rjp.expandframework.utils.DialogUtil;
 import com.rjp.expandframework.utils.FileUtil;
-import com.vise.log.ViseLog;
+import com.rjp.expandframework.utils.PermissionUtil;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -103,18 +102,7 @@ public class LogActivity extends AppCompatActivity {
         String ipAddress = intIP2StringIP(wifiInfo.gateway);//得到IPV4地址
 
         final Button btn = findViewById(R.id.btn_text);
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                btn.setText("1");
-            }
-        });
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        btn.setText("2");
+        btn.setText("success");
     }
 
     public static String intIP2StringIP(int ip) {
@@ -184,7 +172,26 @@ public class LogActivity extends AppCompatActivity {
         writeByMap(testData);
         System.out.println("2耗时：" + (System.currentTimeMillis() - t1) + "ms");
 
-        take();
+        PermissionUtil.builder().context(this).permission(Manifest.permission.CAMERA)
+                .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .build()
+                .request(new PermissionCallback() {
+                    @Override
+                    public void allow() {
+                        take();
+                    }
+
+                    @Override
+                    public void deny(List<String> showDialog) {
+                        if(showDialog != null && showDialog.size() > 0) {
+                            new DialogUtil.Builder()
+                                    .context(mContext)
+                                    .notice(PermissionUtil.getNotice(showDialog))
+                                    .build()
+                                    .show();
+                        }
+                    }
+                });
     }
 
     /**

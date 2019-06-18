@@ -14,6 +14,7 @@ import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * 拍照或者相册获取图片的中间件
@@ -75,7 +76,7 @@ public class PhotoMiddleActivity extends Activity {
         }
 
         @Override
-        public void deny() {
+        public void deny(List<String> showDialog) {
             finish();
         }
     };
@@ -90,7 +91,7 @@ public class PhotoMiddleActivity extends Activity {
         }
 
         @Override
-        public void deny() {
+        public void deny(List<String> showDialog) {
             finish();
         }
     };

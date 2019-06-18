@@ -10,13 +10,13 @@ import android.support.v4.content.ContextCompat;
 
 import com.rjp.expandframework.utils.PermissionUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static android.os.Build.VERSION_CODES.M;
 
 /**
  * 申请权限的activity，避免每一个activity都去调用onRequestPermissionsResult
- *
  */
 public class PermissionActivity extends Activity {
 
@@ -26,7 +26,7 @@ public class PermissionActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(Build.VERSION.SDK_INT >= M) {
+        if (Build.VERSION.SDK_INT >= M) {
             boolean b = checkPermissionAllGranted(PermissionUtil.permissions);
             if (b) {
                 PermissionUtil.callback.allow();
@@ -42,7 +42,7 @@ public class PermissionActivity extends Activity {
 
             //申请权限
             ActivityCompat.requestPermissions(this, permissions, MY_PERMISSION_REQUEST_CODE);
-        }else{
+        } else {
             PermissionUtil.callback.allow();
             finish();
         }
@@ -76,7 +76,14 @@ public class PermissionActivity extends Activity {
             if (isAllGranted) {
                 PermissionUtil.callback.allow();
             } else {
-                PermissionUtil.callback.deny();
+                List<String> dialogPerissions = new ArrayList<>();
+                for (String permission : permissions) {
+                    if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permission)
+                            && ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                        dialogPerissions.add(permission);
+                    }
+                }
+                PermissionUtil.callback.deny(dialogPerissions);
             }
             //结束透明页面
             finish();

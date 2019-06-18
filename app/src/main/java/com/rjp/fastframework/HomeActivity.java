@@ -17,8 +17,6 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rjp.expandframework.interfaces.PermissionCallback;
-import com.rjp.expandframework.log.LogCallback;
-import com.rjp.expandframework.log.OkLog;
 import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
 
@@ -35,22 +33,6 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
 
         mContext = this;
-
-        new PermissionUtil.Builder()
-                .context(this)
-                .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .build()
-                .request(new PermissionCallback() {
-                    @Override
-                    public void allow() {
-
-                    }
-
-                    @Override
-                    public void deny() {
-
-                    }
-                });
 
         String homeJson = FileUtil.openAssets(this, "home.json");
         Gson gson = new Gson();

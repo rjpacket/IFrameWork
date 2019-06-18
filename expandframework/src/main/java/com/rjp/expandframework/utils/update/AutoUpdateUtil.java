@@ -12,6 +12,8 @@ import com.rjp.expandframework.interfaces.PermissionCallback;
 import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
 
+import java.util.List;
+
 /**
  * UpdateStateCallback  需要让一个Dialog或者Notification实现这个接口实现功能
  *
@@ -39,7 +41,7 @@ public class AutoUpdateUtil {
             }
 
             @Override
-            public void deny() {
+            public void deny(List<String> showDialog) {
 
             }
         });
