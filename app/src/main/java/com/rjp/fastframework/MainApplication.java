@@ -22,6 +22,9 @@ import com.rjp.expandframework.log.LogFileManager;
 import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
 import com.rjp.fastframework.keepLive.KeepLiveService;
+import com.rjp.fastframework.keepLive.LiveJobService;
+import com.rjp.fastframework.keepLive.MyJobService;
+import com.rjp.fastframework.keepLive.KeepLiveService;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
@@ -92,7 +95,8 @@ public class MainApplication extends Application implements IAppInit {
 
 //        startService(new Intent(this, LocalService.class));
 //        startService(new Intent(this, RemoteService.class));
-        startService(new Intent(this, KeepLiveService.class));
+//        startService(new Intent(this, KeepLiveService.class));
+//        startService(new Intent(this, MyJobService.class));
 
         Bugly.init(this, "892d945f22", false);
         //是否设置为开发设备

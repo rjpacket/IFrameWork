@@ -14,37 +14,42 @@ import android.os.Build;
 import android.util.Log;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class MyJobService extends JobService {
-    private JobScheduler mJobScheduler;
 
     @SuppressLint("WrongConstant")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.e("===>", "JobHandlerService  onStartCommand");
+        startJobService(startId);
+        return START_STICKY;
+    }
 
+    private void startJobService(int startId) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mJobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
-            JobInfo.Builder builder = new JobInfo.Builder(startId++,
-                    new ComponentName(getPackageName(), MyJobService.class.getName()));
-
-            builder.setPeriodic(6);//设置间隔时间
-
+            JobScheduler mJobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+            JobInfo.Builder builder = new JobInfo.Builder(++startId, new ComponentName(getPackageName(), MyJobService.class.getName()));
+//            builder.setMinimumLatency(0).setBackoffCriteria(JobInfo.DEFAULT_INITIAL_BACKOFF_MILLIS, JobInfo.BACKOFF_POLICY_LINEAR);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                builder.setPeriodic(JobInfo.getMinPeriodMillis(), JobInfo.getMinFlexMillis());
+            } else {
+                builder.setPeriodic(TimeUnit.SECONDS.toMillis(5));
+            }
+            builder.setPeriodic(TimeUnit.SECONDS.toMillis(5));
             builder.setRequiresCharging(true);// 设置是否充电的条件,默认false
-
             builder.setRequiresDeviceIdle(true);// 设置手机是否空闲的条件,默认false
-
             builder.setPersisted(true);//设备重启之后你的任务是否还要继续执行
-
             if (mJobScheduler.schedule(builder.build()) <= 0) {
                 Log.e("===>", "JobHandlerService  工作失败");
             } else {
                 Log.e("===>", "JobHandlerService  工作成功");
             }
+        } else {
+            //系统5.0以下的可继续使用Service
         }
-        return START_STICKY;
     }
 
 
@@ -66,14 +71,13 @@ public class MyJobService extends JobService {
     }
 
     private void init_Aps() {
-        Log.e("===>", "开始定位");
+        Log.e("===>", "开始服务");
     }
 
     // 服务是否运行
     public boolean isServiceRunning(String serviceName) {
         boolean isRunning = false;
-        ActivityManager am = (ActivityManager) this
-                .getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> lists = am.getRunningAppProcesses();
         // 获取运行服务再启动
         for (ActivityManager.RunningAppProcessInfo info : lists) {

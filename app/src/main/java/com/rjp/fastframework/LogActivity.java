@@ -20,6 +20,7 @@ import com.rjp.expandframework.interfaces.PermissionCallback;
 import com.rjp.expandframework.utils.DialogUtil;
 import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
+import com.rjp.fastframework.home.SystemService;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -174,11 +175,12 @@ public class LogActivity extends AppCompatActivity {
 
         PermissionUtil.builder().context(this).permission(Manifest.permission.CAMERA)
                 .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .permission(Manifest.permission.READ_PHONE_STATE)
                 .build()
                 .request(new PermissionCallback() {
                     @Override
                     public void allow() {
-                        take();
+                        startService(new Intent(mContext, SystemService.class));
                     }
 
                     @Override
