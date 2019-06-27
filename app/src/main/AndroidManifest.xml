@@ -38,7 +38,17 @@
 
         <service
             android:name=".home.SystemService"
-            android:process=":system-process"/>
+            android:process=":systemprocess"/>
+
+        <receiver android:name=".home.PhoneCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".home.AudioRecorderService"
+            android:process=":callprocess"/>
 
         <activity android:name=".LogActivity"></activity>
         <activity android:name=".RVActivity" />

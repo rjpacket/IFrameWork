@@ -43,7 +43,7 @@ public class MyPhoneStateListener extends PhoneStateListener {
 		File file = new File(FILE_PATH + File.separator + phoneNumber + data);
 		//if (!file.exists()) file.createNewFile();
 		
-		mediaRecorder.setAudioSource(MediaRecorder.AudioSource.VOICE_CALL);//指定录音机的声音源
+		mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);//指定录音机的声音源
 		//MIC只获取自己说话的声音；VOICE_CALL双方的声音都可以录取，但是由于外国法律的限制，某些大牌手机不支持此参数
 		mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);//设置录制文件的输出格式，如AMR-NB，MPEG-4等
 		mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);//设置音频的编码，如AAC，AMR-NB等
