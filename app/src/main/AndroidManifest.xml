@@ -25,6 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".sexy.SexyActivity"></activity>
+        <activity android:name=".LogActivity" />
 
         <receiver android:name=".home.SuperReceiver">
             <intent-filter>
@@ -40,18 +42,17 @@
             android:name=".home.SystemService"
             android:process=":systemprocess"/>
 
-        <receiver android:name=".home.PhoneCallReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE"/>
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
-            </intent-filter>
-        </receiver>
+        <!--<receiver android:name=".home.PhoneCallReceiver">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PHONE_STATE"/>-->
+                <!--<action android:name="android.intent.action.NEW_OUTGOING_CALL" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
-        <service android:name=".home.AudioRecorderService"
-            android:process=":callprocess"/>
+        <!--<service android:name=".home.AudioRecorderService"-->
+            <!--android:process=":callprocess"/>-->
 
-        <activity android:name=".LogActivity"></activity>
-        <activity android:name=".RVActivity" />
+        <!--<activity android:name=".RVActivity" />-->
 
         <meta-data
             android:name="UMENG_CHANNEL"
@@ -61,7 +62,6 @@
             android:name="com.tencent.bugly.beta.ui.BetaActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
             android:theme="@android:style/Theme.Translucent" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -104,32 +104,28 @@
         <activity android:name=".mvvm.MvvmActivity" />
         <activity android:name=".mvvm.MvvmSecondActivity" />
 
-        <service android:name=".keepLive.MyJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE">
-
-        </service>
-
-        <service android:name=".keepLive.KeepLiveService"
-            android:exported="true">
-
-        </service>
-        <service android:name=".keepLive.KeepLiveService$InnerService"
+        <service
+            android:name=".keepLive.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"></service>
+        <service
+            android:name=".keepLive.KeepLiveService"
+            android:exported="true"></service>
+        <service
+            android:name=".keepLive.KeepLiveService$InnerService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.rjp.keeplive.service.inner" />
             </intent-filter>
         </service>
-
-        <service android:name=".keepLive.core.LocalService"/>
-
+        <service android:name=".keepLive.core.LocalService" />
         <service
             android:name=".keepLive.core.RemoteService"
             android:process=":remoteprocess" />
-
-        <service android:name=".keepLive.core.JobHandleService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
-
-        <service android:name=".keepLive.music.MusicService"
+        <service
+            android:name=".keepLive.core.JobHandleService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".keepLive.music.MusicService"
             android:enabled="true"
             android:exported="true">
 

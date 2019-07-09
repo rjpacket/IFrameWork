@@ -53,8 +53,8 @@ public class AppUtil {
 
     private static Application app;
 
-    public static void initApp(Application application){
-        if(application == null){
+    public static void initApp(Application application) {
+        if (application == null) {
             throw new IllegalArgumentException("can not init by null ...");
         }
         app = application;
@@ -86,13 +86,14 @@ public class AppUtil {
 
     /**
      * 获取手机 imei
+     *
      * @return
      */
     @SuppressLint({"MissingPermission", "HardwareIds"})
     public static String getIMEI(Context context) {
         try {
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            if(telephonyManager == null){
+            if (telephonyManager == null) {
                 return getMagicIMEI();
             }
             String imei = telephonyManager.getDeviceId();
@@ -109,21 +110,21 @@ public class AppUtil {
         }
     }
 
-    public static String getMagicIMEI(){
+    public static String getMagicIMEI() {
         return "35" +
-                Build.BOARD.length()%10 +
-                Build.BRAND.length()%10 +
-                Build.CPU_ABI.length()%10 +
-                Build.DEVICE.length()%10 +
-                Build.DISPLAY.length()%10 +
-                Build.HOST.length()%10 +
-                Build.ID.length()%10 +
-                Build.MANUFACTURER.length()%10 +
-                Build.MODEL.length()%10 +
-                Build.PRODUCT.length()%10 +
-                Build.TAGS.length()%10 +
-                Build.TYPE.length()%10 +
-                Build.USER.length()%10 ;
+                Build.BOARD.length() % 10 +
+                Build.BRAND.length() % 10 +
+                Build.CPU_ABI.length() % 10 +
+                Build.DEVICE.length() % 10 +
+                Build.DISPLAY.length() % 10 +
+                Build.HOST.length() % 10 +
+                Build.ID.length() % 10 +
+                Build.MANUFACTURER.length() % 10 +
+                Build.MODEL.length() % 10 +
+                Build.PRODUCT.length() % 10 +
+                Build.TAGS.length() % 10 +
+                Build.TYPE.length() % 10 +
+                Build.USER.length() % 10;
     }
 
     @RequiresPermission(allOf = {ACCESS_WIFI_STATE, INTERNET})
@@ -511,12 +512,13 @@ public class AppUtil {
     }
 
     public static class AdaptScreenArgs {
-        public int     sizeInPx;
+        public int sizeInPx;
         public boolean isVerticalSlide;
     }
 
     /**
      * 获取文件的uri
+     *
      * @param file
      * @return
      */
@@ -531,6 +533,7 @@ public class AppUtil {
 
     /**
      * 安装apk
+     *
      * @param filePath
      */
     public static void installApk(Context context, String filePath) {
@@ -546,10 +549,11 @@ public class AppUtil {
 
     /**
      * 浏览器打开
+     *
      * @param context
      * @param url
      */
-    public static void browserOpen(Context context, String url){
+    public static void browserOpen(Context context, String url) {
         Uri uri = Uri.parse(url);
         context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }

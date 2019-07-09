@@ -18,5 +18,9 @@
   {
     "clazz": "com.rjp.fastframework.LogActivity",
     "buttonTxt": "日志记录"
+  },
+  {
+    "clazz": "com.rjp.fastframework.sexy.SexyActivity",
+    "buttonTxt": "超级无敌页面"
   }
 ]

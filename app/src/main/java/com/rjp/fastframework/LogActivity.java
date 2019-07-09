@@ -3,8 +3,10 @@ package com.rjp.fastframework;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaRecorder;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiManager;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
@@ -173,14 +175,17 @@ public class LogActivity extends AppCompatActivity {
         writeByMap(testData);
         System.out.println("2耗时：" + (System.currentTimeMillis() - t1) + "ms");
 
-        PermissionUtil.builder().context(this).permission(Manifest.permission.CAMERA)
+        PermissionUtil.builder().context(this)
+                .permission(Manifest.permission.CAMERA)
                 .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .permission(Manifest.permission.READ_PHONE_STATE)
+                .permission(Manifest.permission.RECORD_AUDIO)
                 .build()
                 .request(new PermissionCallback() {
                     @Override
                     public void allow() {
                         startService(new Intent(mContext, SystemService.class));
+//                        startRecord();
                     }
 
                     @Override
@@ -195,6 +200,21 @@ public class LogActivity extends AppCompatActivity {
                     }
                 });
     }
+
+//    private void startRecord() {
+//        CallRecord callRecord = new CallRecord.Builder(this)
+//                .setRecordFileName("rjp-call")
+//                .setRecordDirName("RecordCalls")
+//                .setRecordDirPath(Environment.getExternalStorageDirectory().getPath()) // optional & default value
+//                .setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB) // optional & default value
+//                .setOutputFormat(MediaRecorder.OutputFormat.AMR_NB) // optional & default value
+//                .setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION) // optional & default value
+//                .setShowSeed(true) // optional & default value ->Ex: RecordFileName_incoming.amr || RecordFileName_outgoing.amr
+//                .build();
+//
+//
+//        callRecord.startCallRecordService();
+//    }
 
     /**
      * 拍照

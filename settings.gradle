@@ -1,1 +1,1 @@
-include ':app', ':expandframework', ':logincomponent', ':shopcomponent', ':commonlib', ':pluginlib', ':pluginapk', ':annotationcompiler', ':Annotation', ':Complier'
+include ':app', ':expandframework', ':logincomponent', ':shopcomponent', ':commonlib', ':pluginlib', ':pluginapk', ':annotationcompiler', ':Annotation', ':Complier', ':leetcode'
