@@ -1,7 +1,5 @@
 package com.rjp.expandframework.log;
 
-import com.rjp.expandframework.utils.FileUtil;
-
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,45 +12,49 @@ public class LogPoolManager {
 
     public static final long LOG_UPLOAD_TIME = 10 * 1000;
 
-    //一个app只有一个log管理器
-    private static LogPoolManager logPoolManager = new LogPoolManager();
+    public static final long LOG_UPLOAD_MAX_TIME = 60 * 1000;
 
-    public static LogPoolManager getInstance(){
+    public static long mSleepTime = LOG_UPLOAD_TIME;
+
+    //单例log管理器
+    private static LogPoolManager logPoolManager = new LogPoolManager();
+    private final ExecutorService mWriterExecutor;
+    private final ExecutorService mUploadExecutor;
+
+    public static LogPoolManager getInstance() {
         return logPoolManager;
     }
 
-    //队列
-    private LinkedBlockingQueue<Runnable> mQueue = new LinkedBlockingQueue<>();
-
-    //添加任务
-    public void addTask(Runnable runnable){
-        if(runnable != null){
-            mQueue.add(runnable);
+    /**
+     * 添加writer任务
+     * @param runnable
+     */
+    public void addWriterTask(Runnable runnable) {
+        if (runnable != null) {
+            mWriterExecutor.submit(runnable);
         }
     }
 
-    //线程池
-    private ExecutorService mThreadPoolExecutor;
+    /**
+     * 添加upload任务
+     * @param runnable
+     */
+    public void addUploadTask(Runnable runnable) {
+        if (runnable != null) {
+            mUploadExecutor.submit(runnable);
+        }
+    }
 
-    private LogPoolManager(){
-//        mThreadPoolExecutor = new ThreadPoolExecutor(
-//                1,
-//                3,
-//                60,
-//                TimeUnit.SECONDS,
-//                new ArrayBlockingQueue<Runnable>(4),
-//                new RejectedExecutionHandler() {
-//                    @Override
-//                    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-//                        addTask(r);
-//                    }
-//                });
+    private LogPoolManager() {
+        //初始化writer线程池，单线程
+        mWriterExecutor = Executors.newSingleThreadExecutor();
 
+        //初始化upload线程池，多线程
         int NUMBER_OF_CORES = Runtime.getRuntime().availableProcessors();
         int KEEP_ALIVE_TIME = 10;
         TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.SECONDS;
-        BlockingQueue<Runnable> taskQueue = new LinkedBlockingQueue<Runnable>();
-        mThreadPoolExecutor = new ThreadPoolExecutor(
+        BlockingQueue<Runnable> taskQueue = new LinkedBlockingQueue<>();
+        mUploadExecutor = new ThreadPoolExecutor(
                 NUMBER_OF_CORES,
                 NUMBER_OF_CORES * 2,
                 KEEP_ALIVE_TIME,
@@ -62,57 +64,31 @@ public class LogPoolManager {
                 new RejectedExecutionHandler() {
                     @Override
                     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-                        addTask(r);
+                        addUploadTask(r);
                     }
                 }
         );
-
-        //开启循环线程
-        execute(coreThread);
-
-        //开启写日志的线程
-        execute(uploadFileThread);
+        mUploadExecutor.submit(uploadFileThread);
     }
 
-    //循环线程，不断的从队列取Task执行
-    public Runnable coreThread = new Runnable() {
-
-        Runnable currentRun = null;
-
-        @Override
-        public void run() {
-            while (true){
-                try {
-                    currentRun = mQueue.take();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                execute(currentRun);
-            }
-        }
-    };
-
-    //循环线程，不断的从队列取Task执行
     public Runnable uploadFileThread = new Runnable() {
 
         @Override
         public void run() {
-            while (true){
-                LogFileManager.getInstance().uploadLog();
+            while (true) {
+                boolean active = LogFileManager.getInstance().uploadLog();
+                //延时策略，如果有日志，则每间隔10s，如果没有则每下次间隔 * 2
+                if (active) {
+                    mSleepTime = LOG_UPLOAD_TIME;
+                } else {
+                    mSleepTime = Math.min(mSleepTime * 2, LOG_UPLOAD_MAX_TIME);
+                }
                 try {
-                    Thread.sleep(LOG_UPLOAD_TIME);
+                    Thread.sleep(mSleepTime);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }
     };
-
-    /**
-     * 执行任务
-     * @param runnable
-     */
-    public void execute(Runnable runnable){
-        mThreadPoolExecutor.execute(runnable);
-    }
 }

@@ -8,6 +8,7 @@ import android.graphics.Matrix;
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -72,9 +73,10 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
                 //设置预览尺寸
                 int screenWidth = ScreenUtil.getScreenWidth();
                 int screenHeight = ScreenUtil.getScreenHeight();
-                parameters.setPreviewSize(1920, 1080);
+                Log.d("===>", String.format("手机的宽%s高%s", screenWidth, screenHeight));
+                parameters.setPreviewSize(screenHeight, screenWidth);
                 //设置照片尺寸
-                parameters.setPictureSize(1920, 1080);
+                parameters.setPictureSize(screenHeight, screenWidth);
                 // 对焦
                 parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
                 mCamera.setParameters(parameters);

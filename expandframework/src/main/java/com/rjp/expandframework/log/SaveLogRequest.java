@@ -17,14 +17,17 @@ public class SaveLogRequest implements ILogRequest {
 
     @Override
     public void execute() throws Exception {
-        String logFilePath = null;
         try {
-            logFilePath = LogFileManager.getInstance().writeLog(data);
+            LogFileManager.getInstance().writeLog(data);
         }catch (Exception e){
             e.printStackTrace();
-            onLogCallback.onLogFailure();
+            if(onLogCallback != null) {
+                onLogCallback.onLogFailure();
+            }
             return;
         }
-        onLogCallback.onLogSuccess(logFilePath);
+        if(onLogCallback != null) {
+            onLogCallback.onLogSuccess(null);
+        }
     }
 }

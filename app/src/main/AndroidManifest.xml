@@ -5,17 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <!-- 访问电话状态 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <!-- 允许程序监视、修改或放弃拨打电话 -->
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- 挂载、反挂载外部文件系统 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <!-- 录音权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_LOGS" /> <!-- 访问电话状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序监视、修改或放弃拨打电话 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 挂载、反挂载外部文件系统 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".MainApplication"
@@ -25,35 +21,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sexy.SexyActivity"></activity>
+
+        <activity android:name=".sexy.SexyActivity" />
         <activity android:name=".LogActivity" />
 
         <receiver android:name=".home.SuperReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
                 <!-- 唤醒机器、解锁时发出，屏幕SCREEN_ON和SCREEN_OFF的广播只能通过代码动态的形式注册 -->
-                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
 
         <service
             android:name=".home.SystemService"
-            android:process=":systemprocess"/>
-
-        <!--<receiver android:name=".home.PhoneCallReceiver">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.PHONE_STATE"/>-->
-                <!--<action android:name="android.intent.action.NEW_OUTGOING_CALL" />-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
-
-        <!--<service android:name=".home.AudioRecorderService"-->
-            <!--android:process=":callprocess"/>-->
-
-        <!--<activity android:name=".RVActivity" />-->
-
+            android:process=":systemprocess" /> <!-- <receiver android:name=".home.PhoneCallReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.PHONE_STATE"/> -->
+        <!-- <action android:name="android.intent.action.NEW_OUTGOING_CALL" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!-- <service android:name=".home.AudioRecorderService" -->
+        <!-- android:process=":callprocess"/> -->
+        <!-- <activity android:name=".RVActivity" /> -->
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}" />
@@ -106,10 +98,10 @@
 
         <service
             android:name=".keepLive.MyJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"></service>
+            android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
             android:name=".keepLive.KeepLiveService"
-            android:exported="true"></service>
+            android:exported="true" />
         <service
             android:name=".keepLive.KeepLiveService$InnerService"
             android:exported="true">
@@ -127,14 +119,10 @@
         <service
             android:name=".keepLive.music.MusicService"
             android:enabled="true"
-            android:exported="true">
-
-        </service>
-
-        <service android:name=".keepLive.LiveJobService"
-            android:exported="true">
-
-        </service>
+            android:exported="true" />
+        <service
+            android:name=".keepLive.LiveJobService"
+            android:exported="true" />
     </application>
 
 </manifest>

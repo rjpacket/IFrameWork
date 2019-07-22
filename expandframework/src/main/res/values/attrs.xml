@@ -16,4 +16,31 @@
         <attr name="radius" format="dimension"/>
         <attr name="border_color" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="TitleBarView">
+        <attr name="tbv_height" format="dimension" />
+        <attr name="tbv_left_icon" format="reference" />
+        <attr name="tbv_title" format="string" />
+        <attr name="tbv_right_text" format="string" />
+        <attr name="tbv_extra_head" format="boolean" />
+        <attr name="tbv_background" format="color|reference" />
+        <attr name="tbv_title_color" format="color|reference" />
+        <attr name="tbv_title_size" format="dimension" />
+        <attr name="tbv_right_color" format="color|reference" />
+        <attr name="tbv_right_size" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ShadowLayout">
+        <attr name="sl_shadowColor" format="color|reference" />
+        <attr name="sl_shadowRadius" format="dimension" />
+        <attr name="sl_shadowDx" format="dimension" />
+        <attr name="sl_shadowDy" format="dimension" />
+        <attr name="sl_shadowSide" format="flags">
+            <flag name="LEFT" value="0x0001" />
+            <flag name="TOP" value="0x0010" />
+            <flag name="RIGHT" value="0x0100" />
+            <flag name="BOTTOM" value="0x1000" />
+            <flag name="ALL" value="0x1111" />
+        </attr>
+    </declare-styleable>
 </resources>

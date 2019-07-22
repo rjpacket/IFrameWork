@@ -51,7 +51,7 @@ public class OkHttp3Processor implements IHttpProcessor {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                if(callBack != null){
+                if (callBack != null) {
                     callBack.onFailure(0, e.getMessage());
                 }
             }
@@ -59,8 +59,8 @@ public class OkHttp3Processor implements IHttpProcessor {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 ResponseBody body = response.body();
-                if(body != null) {
-                    if(callBack != null){
+                if (body != null) {
+                    if (callBack != null) {
                         callBack.onSuccess(body.string());
                     }
                 }

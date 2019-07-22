@@ -15,7 +15,7 @@ import android.view.WindowManager;
  */
 public class StatusBarUtil {
 
-    private static final int    DEFAULT_ALPHA = 112;
+    private static final int DEFAULT_ALPHA = 112;
 
     public static int getStatusBarHeight() {
         Resources resources = Resources.getSystem();
@@ -24,7 +24,8 @@ public class StatusBarUtil {
     }
 
     /**
-     *  true 会显示黑字  false显示白字
+     * true 会显示黑字  false显示白字
+     *
      * @param window
      * @param isLightMode
      */
@@ -46,6 +47,7 @@ public class StatusBarUtil {
 
     /**
      * 透明状态栏
+     *
      * @param activity
      */
     public static void transparentStatusBar(final Activity activity) {
