@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+        >
+    <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/monitor_cpuitem"
+            android:layout_height="30dp"
+            />
+    <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/monitor_rssitem"
+            android:layout_height="30dp"
+            />
+    <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/monitor_vssitem"
+            android:layout_height="30dp"
+            />
+
+
+</LinearLayout>

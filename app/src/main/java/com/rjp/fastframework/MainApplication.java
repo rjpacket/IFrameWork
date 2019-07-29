@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentCallbacks;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Choreographer;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -17,14 +18,16 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.rjp.commonlib.ApplicationConfig;
 import com.rjp.commonlib.IAppInit;
 import com.rjp.expandframework.aop.TimeLog;
+import com.rjp.expandframework.apm.ActivityAPM;
+import com.rjp.expandframework.apm.AppLinkStarterTimeUtil;
+import com.rjp.expandframework.apm.cpu.CpuMonitor;
+import com.rjp.expandframework.apm.cpu.OnCpuMonitorDataListener;
+import com.rjp.expandframework.apm.fps.DevFrameSkipMonitor;
+import com.rjp.expandframework.apm.fps.FrameSkipMonitor;
 import com.rjp.expandframework.interfaces.ImageLoader;
 import com.rjp.expandframework.log.LogFileManager;
 import com.rjp.expandframework.utils.AppUtil;
 import com.rjp.expandframework.utils.ImageLoaderUtil;
-import com.rjp.fastframework.keepLive.KeepLiveService;
-import com.rjp.fastframework.keepLive.LiveJobService;
-import com.rjp.fastframework.keepLive.MyJobService;
-import com.rjp.fastframework.keepLive.KeepLiveService;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
@@ -101,10 +104,22 @@ public class MainApplication extends Application implements IAppInit {
         Bugly.init(this, "892d945f22", false);
         //是否设置为开发设备
         Bugly.setIsDevelopmentDevice(getApplicationContext(), true);
+
+
+        ActivityAPM.getInstance().init(this);
+
+        //掉帧检测
+//        DevFrameSkipMonitor.start();
+
+        Choreographer.getInstance().postFrameCallback(new FrameSkipMonitor());
     }
 
     @Override
     protected void attachBaseContext(Context base) {
+
+        //统计冷启动时间
+        AppLinkStarterTimeUtil.coldStart();
+
         super.attachBaseContext(base);
         // you must install multiDex whatever tinker is installed!
         MultiDex.install(base);

@@ -42,6 +42,9 @@
                 />
         </provider>
 
+        <activity android:name=".apm.cpu.MainActivity" />
+        <activity android:name=".apm.cpu.TopDetailActivity" />
+
         <activity
             android:name=".activitys.ForResultActivity"
             android:theme="@android:style/Theme.Translucent"

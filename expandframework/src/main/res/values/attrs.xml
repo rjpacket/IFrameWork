@@ -43,4 +43,10 @@
             <flag name="ALL" value="0x1111" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="RedDotTextView">
+        <attr name="rtv_dot_radius" format="dimension" />
+        <attr name="rtv_dot_color" format="color|reference" />
+        <attr name="rtv_visibility" format="boolean" />
+    </declare-styleable>
 </resources>
