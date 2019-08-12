@@ -82,15 +82,15 @@ public class HomeActivity extends Activity {
 //                } catch (InterruptedException e) {
 //                    e.printStackTrace();
 //                }
-//                try {
-//                    HomeBean homeBean = homeBeans.get(position);
-//                    Intent intent = new Intent();
-//                    intent.setClass(mContext, Class.forName(homeBean.clazz));
-//                    mContext.startActivity(intent);
-//                } catch (ClassNotFoundException e) {
-//                    e.printStackTrace();
-//                    Toast.makeText(mContext, "没有这个页面", Toast.LENGTH_SHORT).show();
-//                }
+                try {
+                    HomeBean homeBean = homeBeans.get(position);
+                    Intent intent = new Intent();
+                    intent.setClass(mContext, Class.forName(homeBean.clazz));
+                    mContext.startActivity(intent);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(mContext, "没有这个页面", Toast.LENGTH_SHORT).show();
+                }
 
 //                startActivity(new Intent(mContext, MainActivity.class));
 
@@ -100,7 +100,7 @@ public class HomeActivity extends Activity {
 //                String maxCpuFreq = CpuManager.getMaxCpuFreq();
 //                Log.d("===>", maxCpuFreq);
 
-                CpuMonitor.execShellGetCpuData("com.rjp.AAAAA");
+//                CpuMonitor.execShellGetCpuData("com.rjp.AAAAA");
             }
         });
 

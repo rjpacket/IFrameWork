@@ -3,6 +3,8 @@ package com.rjp.fastframework;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaRecorder;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiManager;
@@ -23,6 +25,7 @@ import com.rjp.expandframework.utils.DialogUtil;
 import com.rjp.expandframework.utils.FileUtil;
 import com.rjp.expandframework.utils.PermissionUtil;
 import com.rjp.fastframework.home.SystemService;
+import com.rjp.fastframework.views.NavigationView;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -32,6 +35,7 @@ import java.io.OutputStreamWriter;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executors;
@@ -106,6 +110,17 @@ public class LogActivity extends AppCompatActivity {
 
         final Button btn = findViewById(R.id.btn_text);
         btn.setText("success");
+
+//        NavigationView navigationView = findViewById(R.id.navigation_view);
+//        ArrayList<NavigationView.Navigation> navigations = new ArrayList<>();
+//        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+//        Bitmap selectedIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_round);
+//        navigations.add(new NavigationView.Navigation("首页", icon, selectedIcon));
+//        navigations.add(new NavigationView.Navigation("学习", icon, selectedIcon));
+//        navigations.add(new NavigationView.Navigation("咨询", icon, selectedIcon));
+//        navigations.add(new NavigationView.Navigation("风险百科", icon, selectedIcon));
+//        navigations.add(new NavigationView.Navigation("我的", icon, selectedIcon));
+//        navigationView.setNavigations(navigations);
     }
 
     public static String intIP2StringIP(int ip) {

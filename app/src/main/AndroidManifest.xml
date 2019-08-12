@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rjp.fastframework"
-    >
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.rjp.fastframework"
+        >
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" /> <!-- 访问电话状态 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序监视、修改或放弃拨打电话 -->
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 挂载、反挂载外部文件系统 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 挂载、反挂载外部文件系统 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 录音权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/> <!-- 访问电话状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/> <!-- 允许程序监视、修改或放弃拨打电话 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- 挂载、反挂载外部文件系统 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> <!-- 挂载、反挂载外部文件系统 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/> <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
-        android:name=".MainApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name=".sexy.SexyActivity" />
-        <activity android:name=".LogActivity" />
+            android:name=".MainApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            >
+        <activity android:name=".app.AppActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".sexy.SexyActivity"/>
+        <activity android:name=".LogActivity"/>
 
         <receiver android:name=".home.SuperReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
                 <!-- 唤醒机器、解锁时发出，屏幕SCREEN_ON和SCREEN_OFF的广播只能通过代码动态的形式注册 -->
-                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.USER_PRESENT"/>
             </intent-filter>
         </receiver>
 
         <service
-            android:name=".home.SystemService"
-            android:process=":systemprocess"
-            /> <!-- <receiver android:name=".home.PhoneCallReceiver"> -->
+                android:name=".home.SystemService"
+                android:process=":systemprocess"
+                /> <!-- <receiver android:name=".home.PhoneCallReceiver"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="android.intent.action.PHONE_STATE"/> -->
         <!-- <action android:name="android.intent.action.NEW_OUTGOING_CALL" /> -->
@@ -51,34 +58,34 @@
         <!-- android:process=":callprocess"/> -->
         <!-- <activity android:name=".RVActivity" /> -->
         <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}"
-            />
+                android:name="UMENG_CHANNEL"
+                android:value="${UMENG_CHANNEL_VALUE}"
+                />
 
         <activity
-            android:name="com.tencent.bugly.beta.ui.BetaActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale"
-            android:theme="@android:style/Theme.Translucent"
-            />
+                android:name="com.tencent.bugly.beta.ui.BetaActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize|locale"
+                android:theme="@android:style/Theme.Translucent"
+                />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
 
                 <data
-                    android:host="frame"
-                    android:path="/home"
-                    android:scheme="fast"
-                    />
+                        android:host="frame"
+                        android:path="/home"
+                        android:scheme="fast"
+                        />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".live.LiveStartActivity" />
-        <activity android:name=".live.LiveDetailActivity" />
-        <activity android:name=".scroll_view.ScrollMoreActivity" />
-        <activity android:name="com.rjp.expandframework.utils.photo.PhotoTestActivity" />
+        <activity android:name=".SecondActivity"/>
+        <activity android:name=".live.LiveStartActivity"/>
+        <activity android:name=".live.LiveDetailActivity"/>
+        <activity android:name=".scroll_view.ScrollMoreActivity"/>
+        <activity android:name="com.rjp.expandframework.utils.photo.PhotoTestActivity"/>
         <activity android:name=".HandlerActivity">
 
             <!-- <intent-filter> -->
@@ -88,57 +95,53 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".component.ComponentActivity" />
-        <activity android:name=".component.NextActivity" />
-        <activity android:name=".TestAnimActivity" />
-        <activity android:name=".PermissionActivity" />
+        <activity android:name=".component.ComponentActivity"/>
+        <activity android:name=".component.NextActivity"/>
+        <activity android:name=".TestAnimActivity"/>
+        <activity android:name=".PermissionActivity"/>
         <activity android:name=".HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".VideoViewActivity" />
-        <activity android:name=".mvvm.MvvmActivity" />
-        <activity android:name=".mvvm.MvvmSecondActivity" />
+        <activity android:name=".VideoViewActivity"/>
+        <activity android:name=".mvvm.MvvmActivity"/>
+        <activity android:name=".mvvm.MvvmSecondActivity"/>
 
         <service
-            android:name=".keepLive.MyJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            />
+                android:name=".keepLive.MyJobService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                />
         <service
-            android:name=".keepLive.KeepLiveService"
-            android:exported="true"
-            />
+                android:name=".keepLive.KeepLiveService"
+                android:exported="true"
+                />
         <service
-            android:name=".keepLive.KeepLiveService$InnerService"
-            android:exported="true"
-            >
+                android:name=".keepLive.KeepLiveService$InnerService"
+                android:exported="true"
+                >
             <intent-filter>
-                <action android:name="com.rjp.keeplive.service.inner" />
+                <action android:name="com.rjp.keeplive.service.inner"/>
             </intent-filter>
         </service>
-        <service android:name=".keepLive.core.LocalService" />
+        <service android:name=".keepLive.core.LocalService"/>
         <service
-            android:name=".keepLive.core.RemoteService"
-            android:process=":remoteprocess"
-            />
+                android:name=".keepLive.core.RemoteService"
+                android:process=":remoteprocess"
+                />
         <service
-            android:name=".keepLive.core.JobHandleService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            />
+                android:name=".keepLive.core.JobHandleService"
+                android:permission="android.permission.BIND_JOB_SERVICE"
+                />
         <service
-            android:name=".keepLive.music.MusicService"
-            android:enabled="true"
-            android:exported="true"
-            />
+                android:name=".keepLive.music.MusicService"
+                android:enabled="true"
+                android:exported="true"
+                />
         <service
-            android:name=".keepLive.LiveJobService"
-            android:exported="true"
-            />
+                android:name=".keepLive.LiveJobService"
+                android:exported="true"
+                />
 
-        <activity android:name=".app.SettingActivity"></activity>
+        <activity android:name=".app.SettingActivity"/>
     </application>
 
 </manifest>
