@@ -27,7 +27,7 @@ public class NavigationView extends View {
     private int cellWidth;
     private int verticalSpace = 12;
     private RectF iconRect;
-    private int iconWidth = AppUtil.dp2px(24);
+    private int iconWidth = AppUtil.dp2px(20);
     private int iconMarginLeft;
     private float textHeight;
     private int iconMarginTop;
@@ -58,7 +58,7 @@ public class NavigationView extends View {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setTextAlign(Paint.Align.CENTER);
-        mPaint.setTextSize(AppUtil.dp2px(12));
+        mPaint.setTextSize(AppUtil.dp2px(10));
         Paint.FontMetrics fontMetrics = mPaint.getFontMetrics();
         textHeight = fontMetrics.descent - fontMetrics.ascent;
         distance = (int) ((fontMetrics.descent + fontMetrics.ascent) / 2);
@@ -68,11 +68,11 @@ public class NavigationView extends View {
 
     private void processAttrs(AttributeSet attrs) {
         TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.NavigationView);
-        if(typedArray != null){
-            iconWidth = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_icon_width, AppUtil.dp2px(24));
-            verticalSpace = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_vertical_space, AppUtil.dp2px(3));
-            textSize = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_text_size, AppUtil.dp2px(12));
-            selectedTextSize = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_selected_text_size, AppUtil.dp2px(12));
+        if (typedArray != null) {
+            iconWidth = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_icon_width, AppUtil.dp2px(20));
+            verticalSpace = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_vertical_space, AppUtil.dp2px(4));
+            textSize = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_text_size, AppUtil.dp2px(10));
+            selectedTextSize = (int) typedArray.getDimension(R.styleable.NavigationView_ngv_selected_text_size, AppUtil.dp2px(10));
             textColor = typedArray.getColor(R.styleable.NavigationView_ngv_text_color, Color.BLACK);
             selectedTextColor = typedArray.getColor(R.styleable.NavigationView_ngv_selected_text_color, Color.BLACK);
 
@@ -127,9 +127,8 @@ public class NavigationView extends View {
                 float x = event.getX();
                 float y = event.getY();
                 int position = getPositionByXY(x, y);
-                if(position != -1){
-                    setSelectedIndex(position);
-                    if(onNavigationClickListener != null){
+                if (position != -1) {
+                    if (onNavigationClickListener != null) {
                         onNavigationClickListener.onNavigationClick(position);
                     }
                 }

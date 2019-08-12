@@ -8,8 +8,9 @@
     <com.rjp.fastframework.views.NavigationView
             android:id="@+id/app_view_navigation_view"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="52dp"
             android:layout_alignParentBottom="true"
+            android:background="#F6F6F6"
             />
 
     <FrameLayout
@@ -23,8 +24,8 @@
 
     <View
             android:layout_width="match_parent"
-            android:layout_height="6dp"
+            android:layout_height="1px"
             android:layout_above="@id/app_view_navigation_view"
-            android:background="@drawable/shape_home_shadow"
+            android:background="#D6D6D6"
             />
 </RelativeLayout>

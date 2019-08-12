@@ -46,7 +46,7 @@ public class AppView extends RelativeLayout {
         navigationView.setOnNavigationClickListener(new OnNavigationClickListener() {
             @Override
             public void onNavigationClick(int position) {
-                showFragment(fragments.get(position));
+                showFragment(position);
                 if(onNavigationClickListener != null){
                     onNavigationClickListener.onNavigationClick(position);
                 }
@@ -54,7 +54,8 @@ public class AppView extends RelativeLayout {
         });
     }
 
-    public void showFragment(Fragment fragment){
+    public void showFragment(int position){
+        Fragment fragment = fragments.get(position);
         FragmentManager fragmentManager = mActivity.getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         for (Fragment fg : fragments) {
@@ -67,6 +68,8 @@ public class AppView extends RelativeLayout {
         }
         transaction.show(fragment);
         transaction.commitAllowingStateLoss();
+
+        navigationView.setSelectedIndex(position);
     }
 
     public void setNavigations(List<NavigationView.Navigation> navigations){
@@ -77,7 +80,6 @@ public class AppView extends RelativeLayout {
     public void setFragments(List<Fragment> fragments){
         this.fragments.clear();
         this.fragments.addAll(fragments);
-        showFragment(fragments.get(0));
     }
 
     public void setOnNavigationClickListener(OnNavigationClickListener onNavigationClickListener) {
