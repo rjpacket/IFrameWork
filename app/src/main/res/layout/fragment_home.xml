@@ -105,7 +105,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="肝病简介"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -128,7 +128,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="肝病常识"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -151,7 +151,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="在线预约"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -182,7 +182,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="病例简述"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -205,7 +205,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="扫描录入"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -228,7 +228,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="肝病专家"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -251,7 +251,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="视频学习"
+                            android:text="调查问卷"
                             android:layout_marginTop="6dp"
                             android:textSize="14dp"
                             android:textColor="#333"
@@ -272,7 +272,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="标题"
+                    android:text="肝病专家"
                     />
 
                 <TextView
