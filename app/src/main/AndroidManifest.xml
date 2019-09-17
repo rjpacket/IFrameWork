@@ -25,12 +25,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             >
-        <activity android:name=".app.AppActivity">
+        <activity android:name=".app.AnimTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".app.AppActivity">
+
         </activity>
         <activity android:name=".sexy.SexyActivity"/>
         <activity android:name=".LogActivity"/>
@@ -100,7 +103,6 @@
         <activity android:name=".TestAnimActivity"/>
         <activity android:name=".PermissionActivity"/>
         <activity android:name=".HomeActivity">
-
         </activity>
         <activity android:name=".VideoViewActivity"/>
         <activity android:name=".mvvm.MvvmActivity"/>

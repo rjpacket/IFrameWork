@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
 
 import java.lang.reflect.ParameterizedType;
@@ -30,13 +29,18 @@ public abstract class ModelCallback<T> implements ICallback{
     @Override
     public void onSuccess(String result) {
         Gson gson = new Gson();
-        final T model = gson.fromJson(result, resultType);
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                onSuccess(model);
-            }
-        });
+        BaseModel baseModel = gson.fromJson(result, BaseModel.class);
+        if(baseModel.getStatus() == 0) {
+            final T model = gson.fromJson(baseModel.getData().toString(), resultType);
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    onSuccess(model);
+                }
+            });
+        }else{
+            onFailure(baseModel.getStatus(), result);
+        }
     }
 
     public abstract void onSuccess(T model);

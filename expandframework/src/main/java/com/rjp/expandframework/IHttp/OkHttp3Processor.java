@@ -1,19 +1,11 @@
 package com.rjp.expandframework.IHttp;
 
-import android.support.annotation.Nullable;
+import android.text.TextUtils;
+import okhttp3.*;
 
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
 
 /**
  * author: jinpeng.ren create at 2019/6/17 13:50
@@ -21,9 +13,9 @@ import okhttp3.ResponseBody;
  */
 public class OkHttp3Processor implements IHttpProcessor {
 
-    public static final int TIME_OUT_CONNECT = 30_000;
-    public static final int TIME_OUT_READ = 30_000;
-    public static final int TIME_OUT_WRITE = 30_000;
+    public static final int TIME_OUT_CONNECT = 20_000;
+    public static final int TIME_OUT_READ = 20_000;
+    public static final int TIME_OUT_WRITE = 20_000;
 
     private final OkHttpClient okHttpClient;
 
@@ -61,7 +53,11 @@ public class OkHttp3Processor implements IHttpProcessor {
                 ResponseBody body = response.body();
                 if (body != null) {
                     if (callBack != null) {
-                        callBack.onSuccess(body.string());
+                        try {
+                            callBack.onSuccess(body.string());
+                        }catch (Exception e){
+                            callBack.onFailure(110, e.getMessage());
+                        }
                     }
                 }
             }
