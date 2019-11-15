@@ -3,54 +3,44 @@ package com.rjp.fastframework;
 public class project {
     public static void main(String[] args) {
 
-        class A{
-            public A(){
-                System.out.println("A init");
-            }
-
-            public void a(){
-                System.out.println("aa");
-            }
-        }
-
-        class B extends A{
-            public B(){
-                System.out.println("B init");
-            }
-
-            public void a(){
-                System.out.println("ba");
-            }
-        }
-
-        class C extends B{
-
-            @Override
-            public void a() {
-                System.out.println("ca");
-            }
-        }
-
-        A c = new C();
-        c.a();
-
-        class Z implements X,Y{
-
-            @Override
-            public void a() {
-                System.out.println("z");
-            }
-        }
-
-        Z z = new Z();
-        z.a();
+//        int[] ints = oneCount(10);
+//        for (int anInt : ints) {
+//            System.out.println(anInt);
+//        }
+        System.out.println(count(Integer.MAX_VALUE - 2));
     }
 
-    public interface X{
+    public interface X {
         void a();
     }
 
-    public interface Y{
+    public interface Y {
         void a();
+    }
+
+    public static int count(int n) {
+        int count = 0;
+        while (n != 0) {
+            if ((n & 1) == 1) {
+                count++;
+            }
+            n = n >> 1;
+        }
+        return count;
+    }
+
+    public static int[] oneCount(int n) {
+        int[] res = new int[n + 1];
+        int pow = 1, p = 1;
+        for (int i = 1; i <= n; i++) {
+            if (i == pow) {
+                res[i] = 1;
+                pow = pow << 1;
+                p = 1;
+            } else {
+                res[i] = res[p++] + 1;
+            }
+        }
+        return res;
     }
 }

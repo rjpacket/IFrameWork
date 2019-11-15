@@ -8,9 +8,12 @@ import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.rjp.expandframework.interfaces.OnDialogClickListener;
@@ -31,39 +34,19 @@ public class AnimTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anim_test);
 
-        final TextView tvAnim = findViewById(R.id.tv_anim);
-//        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
-//        animation.setDuration(2000);
-//        animation.setFillAfter(true);
-//        tvAnim.setAnimation(animation);
-//        animation.start();
-
         context = this;
-
-        tvAnim.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PermissionUtil.builder().context(context)
-                        .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        .build()
-                        .request(new PermissionCallback() {
-                            @Override
-                            public void allow() {
-
-                            }
-
-                            @Override
-                            public void deny(List<String> notAsk) {
-                                if(notAsk.size() > 0) {
-                                    showPicturePermissionSettingDialog();
-                                }
-                            }
-                        });
-            }
-        });
     }
 
-    private void showPicturePermissionSettingDialog() {
-        PermissionUtil.gotoPermission(context, BuildConfig.APPLICATION_ID);
+    public int height(View view){
+        if(view instanceof ViewGroup){
+            ViewGroup viewGroup = (ViewGroup) view;
+            int childCount = viewGroup.getChildCount();
+            int max = 0;
+            for (int i = 0; i < childCount; i++) {
+                max = Math.max(max, height(viewGroup.getChildAt(i)));
+            }
+            return 1 + max;
+        }
+        return 1;
     }
 }
