@@ -7,13 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.*;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -63,7 +61,7 @@ public class HomeActivity extends Activity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                if(convertView == null){
+                if (convertView == null) {
                     convertView = LayoutInflater.from(mContext).inflate(R.layout.item_home_list_view, parent, false);
                 }
                 TextView tvTitle = convertView.findViewById(R.id.tv_title);
@@ -109,7 +107,7 @@ public class HomeActivity extends Activity {
 
     }
 
-    public class HomeBean{
+    public class HomeBean {
         public String clazz;
         public String buttonTxt;
     }
@@ -127,5 +125,31 @@ public class HomeActivity extends Activity {
         AppLinkStarterTimeUtil.coldEnd();
 
         AppLinkStarterTimeUtil.hotEnd();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = getCurrentFocus();
+            if (isShouldHideKeyboard(v, ev)) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    private boolean isShouldHideKeyboard(View v, MotionEvent event) {
+        if (v instanceof EditText) {
+            int[] l = {0, 0};
+            v.getLocationInWindow(l);
+            int left = l[0],
+                    top = l[1],
+                    bottom = top + v.getHeight(),
+                    right = left + v.getWidth();
+            return !(event.getX() > left && event.getX() < right
+                    && event.getY() > top && event.getY() < bottom);
+        }
+        return false;
     }
 }

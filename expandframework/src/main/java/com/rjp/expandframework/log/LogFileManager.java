@@ -121,7 +121,7 @@ public class LogFileManager {
             String[] split = name.split("\\.");
             boolean rename = processFile.renameTo(new File(String.format("%s/%s%s", processFile.getParentFile().getAbsolutePath(), split[0], LOG_FILE_EXT)));
             if (rename) {
-                Log.d("checkFileStatusAndSize", String.format("%s已经写满了", name));
+//                Log.d("checkFileStatusAndSize", String.format("%s已经写满了", name));
             }
         }
         //文件夹是不是满了
@@ -142,7 +142,7 @@ public class LogFileManager {
                 if (deleteFile.getName().endsWith(LOG_FILE_EXT)) {
                     boolean delete = deleteFile.delete();
                     if (delete) {
-                        Log.d("===>", "日志满了，删除一个");
+//                        Log.d("===>", "日志满了，删除一个");
                     }
                 }
             }
@@ -156,15 +156,15 @@ public class LogFileManager {
      */
     public boolean uploadLog() {
         int uploadLogCount = 1;
-        Log.d(TAG_LOG, String.format("尝试上传%s个日志", uploadLogCount));
+//        Log.d(TAG_LOG, String.format("尝试上传%s个日志", uploadLogCount));
         List<File> uploadLogFiles = getValidLogFiles(uploadLogCount);
         if (uploadLogFiles != null) {
-            Log.d(TAG_LOG, String.format("实际上传%s个日志", uploadLogFiles.size()));
+//            Log.d(TAG_LOG, String.format("实际上传%s个日志", uploadLogFiles.size()));
             for (File uploadLogFile : uploadLogFiles) {
-                Log.d(TAG_LOG, String.format("上传一个日志%s", uploadLogFile.getName()));
+//                Log.d(TAG_LOG, String.format("上传一个日志%s", uploadLogFile.getName()));
                 boolean modify = uploadLogFile.setLastModified(0);
                 if (modify) {
-                    Log.d(TAG_LOG, String.format("修改了日志文件%s的修改时间", uploadLogFile.getName()));
+//                    Log.d(TAG_LOG, String.format("修改了日志文件%s的修改时间", uploadLogFile.getName()));
                 }
                 OkLog.uploadFile(uploadLogFile.getAbsolutePath(), new LogCallback() {
                     @Override

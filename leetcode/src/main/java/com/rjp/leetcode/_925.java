@@ -13,21 +13,21 @@ public class _925 {
     public static boolean isLongPressedName(String name, String typed) {
         int nLen = name.length();
         int tLen = typed.length();
-        if(tLen < nLen){
+        if (tLen < nLen) {
             return false;
         }
         int nIndex = 0;
         int tIndex = 0;
-        while (nIndex < nLen && tIndex < tLen){
-            if(name.charAt(nIndex) == typed.charAt(tIndex)){
+        while (nIndex < nLen && tIndex < tLen) {
+            if (name.charAt(nIndex) == typed.charAt(tIndex)) {
                 nIndex++;
                 tIndex++;
-            }else{
+            } else {
                 tIndex++;
             }
         }
-        while (tIndex < tLen){
-            if(name.charAt(nIndex - 1) == typed.charAt(tIndex)){
+        while (tIndex < tLen) {
+            if (name.charAt(nIndex - 1) == typed.charAt(tIndex)) {
                 tIndex++;
             }
         }
