@@ -1,0 +1,262 @@
+2020-09-08 17:39:36.912 D/===>eslog:
+2020-09-08 17:39:36.912 D/===>eslog: ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:36.913 D/===>eslog: ║ EsLog$Builder.upload(EsLog.java:189)
+2020-09-08 17:39:36.913 D/===>eslog: ╟───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2020-09-08 17:39:36.914 D/===>eslog: ║ 上传日志{"currentTime":1599557976906,"previousPage":"me","data":{"eventTypeName":"登录_全屏登录访问","target":"login_fullScreen_VISIT"},"sourceChannel":"other","project":"beiins_app_android","eventType":"VISIT","deviceId":"891c2a5824c85b75"}
+2020-09-08 17:39:36.914 D/===>eslog: ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:36.914 D/===>eslog:
+2020-09-08 17:39:36.959 D/AuthnHelper: CMCC-SDK:aid = %cc29d4e115d249b28712616598384fe0
+2020-09-08 17:39:36.962 D/AuthnHelper: CMCC-SDK:生成androidkeystore成功
+2020-09-08 17:39:36.970 D/UMCTelephonyManagement: CMCC-SDK:getDefaultDataSubscriptionInfo适配成功: dataSlotId即sim_id = 1
+2020-09-08 17:39:36.970 D/UMCTelephonyManagement: CMCC-SDK:getDefaultDataSubscriptionInfo适配成功: dataSubId = 4
+2020-09-08 17:39:36.970 E/brand: CMCC-SDK:Xiaomi
+2020-09-08 17:39:36.974 D/UMCTelephonyManagement: CMCC-SDK:operatorFlag = 898603
+2020-09-08 17:39:36.974 D/UMCTelephonyManagement: CMCC-SDK:readSim1Info1 iccid1 = 89860319940274038482
+2020-09-08 17:39:36.984 D/UMCTelephonyManagement: CMCC-SDK:operatorFlag = 898601
+2020-09-08 17:39:36.984 D/UMCTelephonyManagement: CMCC-SDK:readSim1Info2 iccid2 = 89860118802388413907
+2020-09-08 17:39:36.995 D/UMCTelephonyManagement: CMCC-SDK:readSimInfoDbStart
+2020-09-08 17:39:37.000 E/brand: CMCC-SDK:Xiaomi
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:icc_id-->89860118802388413907
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:sim_id-->1
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:subId或者说是_id->4
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:mcc_string--->1
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:mnc_string--->460
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:carrier_name----->中国联通
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:---------------------------------
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:icc_id-->89860319940274038482
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:sim_id-->0
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:subId或者说是_id->5
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:mcc_string--->11
+2020-09-08 17:39:37.000 D/UMCTelephonyManagement: CMCC-SDK:mnc_string--->460
+2020-09-08 17:39:37.001 D/UMCTelephonyManagement: CMCC-SDK:carrier_name----->中国电信
+2020-09-08 17:39:37.001 D/UMCTelephonyManagement: CMCC-SDK:---------------------------------
+2020-09-08 17:39:37.002 D/UMCTelephonyManagement: CMCC-SDK:readSimInfoDbEnd
+2020-09-08 17:39:37.002 D/o: CMCC-SDK:operator: 46001
+2020-09-08 17:39:37.002 E/o: CMCC-SDK:中国联通
+2020-09-08 17:39:37.002 D/TelephonyUtils: CMCC-SDK:流量
+2020-09-08 17:39:37.002 I/AuthnHelper: CMCC-SDK:网络类型: 1
+2020-09-08 17:39:37.002 I/AuthnHelper: CMCC-SDK:运营商类型: 2
+2020-09-08 17:39:37.013 E/AuthnHelper: CMCC-SDK:有READ_PHONE_STATE权限？true
+2020-09-08 17:39:37.013 D/UMCTelephonyManagement: CMCC-SDK:data dataNetworkType defaultDataSubId = 4
+2020-09-08 17:39:37.018 D/UMCTelephonyManagement: CMCC-SDK:data dataNetworkType ---------13
+2020-09-08 17:39:37.020 D/TelephonyUtils: CMCC-SDK:流量
+2020-09-08 17:39:37.020 D/UMC_SDK: CMCC-SDK:imei is 866146031016292
+2020-09-08 17:39:37.020 D/o: CMCC-SDK:operator: 46001
+2020-09-08 17:39:37.020 E/o: CMCC-SDK:中国联通
+2020-09-08 17:39:37.020 D/AuthnHelper: CMCC-SDK:iccid=89860118802388413907
+2020-09-08 17:39:37.020 D/AuthnHelper: CMCC-SDK:imsi=460012895311946
+2020-09-08 17:39:37.052 D/cyb: CMCC-SDK:isRooted=lrwxrwxrwx 1 root root 8 1973-01-31 11:00 /sbin/su -> ./magisk
+2020-09-08 17:39:37.053 D/PhoneScripUtils: CMCC-SDK:simState = 0
+2020-09-08 17:39:37.053 D/AuthnHelper: CMCC-SDK:isCachePhoneScrip = false
+2020-09-08 17:39:37.055 E/AuthnHelper: CMCC-SDK:超时时间：8000
+2020-09-08 17:39:37.056 I/AuthBusiness: CMCC-SDK:进行取号查询》》》》authtype=3
+2020-09-08 17:39:37.058 D/TelephonyUtils: CMCC-SDK:流量
+2020-09-08 17:39:37.058 D/UMC_SDK: CMCC-SDK:imei is 866146031016292
+2020-09-08 17:39:37.066 D/BaseRequest: CMCC-SDK:不使用wifi下取号1
+2020-09-08 17:39:37.068 E/GETpre: CMCC-SDK:1.0&quick_login_android_5.7.2&300011989568&3&&460012895311946&866146031016292&2&1&Xiaomi&MI+6&android8.0.0&0&7.0&&e27e79b04a9948a7b695bf7bb0a7a589&20200908173937059&&&&&&&&460110882720301&99001026400823&com.beiins.dolly&353488CA91DDC902892C365DF3B667D0&BF1EF104A83589DF55A2B8B2989521DF&&&
+2020-09-08 17:39:37.068 E/BaseRequest: CMCC-SDK:request https url : http://onekey.cmpassport.com/unisdk/rs/getPrePhonescrip>>>>>>> PARAMS : {"encrypted":"1AF1B726E9091E0B1EFB0409BF3374381C1A643627ED019D1F714A33F2F0DB6ADE3ACDB8EDDB00F1395D8014E5879D9B624C034775D2F00963B56124A2215F16C4FAE3674677B62B8E04C215FD7B6443270999F8F40F1435F3D477B7FBBE405BF7A2FE752AA4E52B3DEA1079D9DB2490915A3F6322F38BD29FC86ED35A92DABE","reqdata":"OCFeOm9LEh+VsqXPF2ShEcSQpj+0wGUTawl96HZVYUvBm7Ptsq+DUNjRb+fD pDyx\/MHa2YYLPelgb+\/LdFBLYSOwYpHRg37b9beBDpQDaZ7XhtEmed+KQWBw hUnp3Dv+SgEalc5NVuDuP\/ySQWEhZ3F0ITcPOVzTiUjf3mUXLSfP2\/qS4QAd 8uhM5+RVpB7Q9YaLEtvMPR\/AI0Rt7KeX6YRDEzXPgBXQNsljylxxgGurG71R 8DOZJoB66VhWBWLTGrHCtidWK7CxdjXcdb3Axt6+M\/CRC2bCSLR+qPIUa9f1 EJ3P2GUjUSIv\/cAfLhd59ZGq6w52zchbAkvN3ygRsgC845uF+j3kFTKFeNMY jUhVgwvToSChMZCyFBhSgX72LG2JHT9t\/O+N4ZB+r+ogQA=="}
+2020-09-08 17:39:37.069 D/TelephonyUtils: CMCC-SDK:流量
+2020-09-08 17:39:37.069 I/HttpUtils: CMCC-SDK:使用wifi下取号？？？？？？？false
+2020-09-08 17:39:37.071 D/UmcIPUtils: CMCC-SDK:IPV4 ip：10.216.58.139
+2020-09-08 17:39:37.073 D/UmcIPUtils: CMCC-SDK:onlyMobileDataIp true IPV6 ip：2408:84e1:128:214e:aa83:7324:c608:fa6c
+2020-09-08 17:39:37.074 E/GETpre: CMCC-SDK:1.0&quick_login_android_5.7.2&300011989568&3&&460012895311946&866146031016292&2&1&Xiaomi&MI+6&android8.0.0&0&7.0&&e27e79b04a9948a7b695bf7bb0a7a589&20200908173937059&&&&&&&&460110882720301&99001026400823&com.beiins.dolly&353488CA91DDC902892C365DF3B667D0&AB769CA1729D2D170CA4C3F63C88C7A7&&10.216.58.139&2408:84e1:128:214e:aa83:7324:c608:fa6c
+2020-09-08 17:39:37.074 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: http://onekey.cmpassport.com/unisdk/rs/getPrePhonescrip
+2020-09-08 17:39:37.075 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:37.294 D/===>eslog:
+2020-09-08 17:39:37.294 D/===>eslog: ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:37.295 D/===>eslog: ║ EsLog$Builder$1.onResponse(EsLog.java:218)
+2020-09-08 17:39:37.295 D/===>eslog: ╟───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2020-09-08 17:39:37.295 D/===>eslog: ║ 上传日志成功
+2020-09-08 17:39:37.295 D/===>eslog: ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:37.295 D/===>eslog:
+2020-09-08 17:39:37.384 D/HttpUtils: CMCC-SDK:Location head =http://opencloud.wostore.cn/openapi/netauth/precheck/wp?timeStamp=1599557977818&packname=xxx&business_type=1&format=jsonp&sign=25EBD012DB792527F0775C2EFBFC865F&callback=&fp=&client_type=7&version=1.5&client_id=99166000000000000228&key=hYxG2Bm%2BPCaxmoPgOxqIAPfBtS8iJsKI7xnnWObR%2F%2B2gamCxJ7RSvBBrFvBJA3TBaSZH%2FGFb%2FS5tQkK0dPmTMDSibs4uMmOaYh6PJBeqxuUd%2Bp6p6BMq14u06xLMMQXkPDvojDWyeAVUODG8dkct4LHotn9hDqYdRKI6gra32No%3D&packsign=xxx&
+2020-09-08 17:39:37.384 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: http://opencloud.wostore.cn/openapi/netauth/precheck/wp?timeStamp=1599557977818&packname=xxx&business_type=1&format=jsonp&sign=25EBD012DB792527F0775C2EFBFC865F&callback=&fp=&client_type=7&version=1.5&client_id=99166000000000000228&key=hYxG2Bm%2BPCaxmoPgOxqIAPfBtS8iJsKI7xnnWObR%2F%2B2gamCxJ7RSvBBrFvBJA3TBaSZH%2FGFb%2FS5tQkK0dPmTMDSibs4uMmOaYh6PJBeqxuUd%2Bp6p6BMq14u06xLMMQXkPDvojDWyeAVUODG8dkct4LHotn9hDqYdRKI6gra32No%3D&packsign=xxx&
+2020-09-08 17:39:37.384 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:37.606 D/HttpUtils: CMCC-SDK:Location head =http://10.204.31.201:38749/api?appid=356482285568&messageid=9ff956218ac841048d8ba9e94f64e7bc&ret_url=aHR0cDovL29wZW5jbG91ZC53b3N0b3JlLmNuL29wZW5hcGkvbmV0YXV0aC9jYWxsYmFjaz9idXNpbmVzc190eXBlPTEmY2xpZW50X2lkPTk5MTY2MDAwMDAwMDAwMDAwMjI4JmZvcm1hdD1qc29ucCZrZXk9aFl4RzJCbStQQ2F4bW9QZ094cUlBUGZCdFM4aUpzS0k3eG5uV09iUi8rMmdhbUN4SjdSU3ZCQnJGdkJKQTNUQmFTWkgvR0ZiL1M1dFFrSzBkUG1UTURTaWJzNHVNbU9hWWg2UEpCZXF4dVVkK3A2cDZCTXExNHUwNnhMTU1RWGtQRHZvakRXeWVBVlVPREc4ZGtjdDRMSG90bjloRHFZZFJLSTZncmEzMk5vPSZtc2dJZD05ZmY5NTYyMThhYzg0MTA0OGQ4YmE5ZTk0ZjY0ZTdiYyZwYWNrbmFtZT14eHgmc2lnbj0wMEE4RUI4NzcxRjI4QkE4RDMxNjYzOEZCMjkwNjJFMSZ0aW1lU3RhbXA9MTU5OTU1Nzk3ODE1MiZ2ZXJzaW9uPTEuNQ==
+2020-09-08 17:39:37.606 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: http://10.204.31.201:38749/api?appid=356482285568&messageid=9ff956218ac841048d8ba9e94f64e7bc&ret_url=aHR0cDovL29wZW5jbG91ZC53b3N0b3JlLmNuL29wZW5hcGkvbmV0YXV0aC9jYWxsYmFjaz9idXNpbmVzc190eXBlPTEmY2xpZW50X2lkPTk5MTY2MDAwMDAwMDAwMDAwMjI4JmZvcm1hdD1qc29ucCZrZXk9aFl4RzJCbStQQ2F4bW9QZ094cUlBUGZCdFM4aUpzS0k3eG5uV09iUi8rMmdhbUN4SjdSU3ZCQnJGdkJKQTNUQmFTWkgvR0ZiL1M1dFFrSzBkUG1UTURTaWJzNHVNbU9hWWg2UEpCZXF4dVVkK3A2cDZCTXExNHUwNnhMTU1RWGtQRHZvakRXeWVBVlVPREc4ZGtjdDRMSG90bjloRHFZZFJLSTZncmEzMk5vPSZtc2dJZD05ZmY5NTYyMThhYzg0MTA0OGQ4YmE5ZTk0ZjY0ZTdiYyZwYWNrbmFtZT14eHgmc2lnbj0wMEE4RUI4NzcxRjI4QkE4RDMxNjYzOEZCMjkwNjJFMSZ0aW1lU3RhbXA9MTU5OTU1Nzk3ODE1MiZ2ZXJzaW9uPTEuNQ==
+2020-09-08 17:39:37.608 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:37.726 D/HttpUtils: CMCC-SDK:Location head =http://opencloud.wostore.cn/openapi/netauth/callback?business_type=1&client_id=99166000000000000228&format=jsonp&key=hYxG2Bm+PCaxmoPgOxqIAPfBtS8iJsKI7xnnWObR/+2gamCxJ7RSvBBrFvBJA3TBaSZH/GFb/S5tQkK0dPmTMDSibs4uMmOaYh6PJBeqxuUd+p6p6BMq14u06xLMMQXkPDvojDWyeAVUODG8dkct4LHotn9hDqYdRKI6gra32No=&msgId=9ff956218ac841048d8ba9e94f64e7bc&packname=xxx&sign=00A8EB8771F28BA8D316638FB29062E1&timeStamp=1599557978152&version=1.5&code=dbb1f44b53001115b823735200002219&province=111
+2020-09-08 17:39:37.727 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: http://opencloud.wostore.cn/openapi/netauth/callback?business_type=1&client_id=99166000000000000228&format=jsonp&key=hYxG2Bm+PCaxmoPgOxqIAPfBtS8iJsKI7xnnWObR/+2gamCxJ7RSvBBrFvBJA3TBaSZH/GFb/S5tQkK0dPmTMDSibs4uMmOaYh6PJBeqxuUd+p6p6BMq14u06xLMMQXkPDvojDWyeAVUODG8dkct4LHotn9hDqYdRKI6gra32No=&msgId=9ff956218ac841048d8ba9e94f64e7bc&packname=xxx&sign=00A8EB8771F28BA8D316638FB29062E1&timeStamp=1599557978152&version=1.5&code=dbb1f44b53001115b823735200002219&province=111
+2020-09-08 17:39:37.729 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:37.875 I/HttpUtils: CMCC-SDK:异网取号结果 = {"code":"0","data":"0DE96181EB3D487002E228EFCBA2DB703A9CD815F5B37276B4659DE8C0E1C611942DAC4DCFD21CE28CB22A0605FA4FDD6404537355B83B9A185935D965F0F0FEC91CA33E55FE2D57291CC531B7ED36AD326DB816ECAEB9E0F0519A95092265989FAF939FD4E6F0BEAEE29D8DF0A68A9C","msg":"调用成功","result":0}
+2020-09-08 17:39:37.876 I/HttpUtils: CMCC-SDK:pplocation=/rs/getNewUnicomPhoneNumberNotify?ver=1.0
+2020-09-08 17:39:37.876 I/HttpUtils: CMCC-SDK:locationhttp://onekey.cmpassport.com/unisdk/rs/getNewUnicomPhoneNumberNotify
+2020-09-08 17:39:37.877 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: http://onekey.cmpassport.com/unisdk/rs/getNewUnicomPhoneNumberNotify
+2020-09-08 17:39:37.878 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:38.126 E/BaseRequest: CMCC-SDK:request success , url : http://onekey.cmpassport.com/unisdk/rs/getPrePhonescrip>>>>result : {"ver":"4.0","resultdata":"xnRqmwVuCZC6cO3vFUChCBUdf9smvZVYB9BELzNxA1QKtV3aiTYXLqsOpyUy QvgzC8idqboGfRIVs71Dza04j9BRI08gShfiWlQhDvIYKtwBq7J4u1zfieyG OLXgmG7rtWq9n7ddC1gSdBGScFEPPbHmP3iW8T3hasJciXPQ8SYr/yRXKAdN yXhlzRmPr10gxYwNXyTCA3MG9Avx9+ppebrG9NicMrQxUv9qZhJo4GhU79I9 4diiJnaXR9EHcXEmUAn7KpiQUqx0G8bKiq+kyCxIM93VHtGc6fun8WOGo7m6 6rWMs7l8SDY4iq116Dppb6joHJx2MMilE2bXOCbGYCQl+4Hgi/zbUxf9BmcI JksHnVjlJgniOtq3dxTA4HGmeL9BRfOWBTWUUoKc3cWDoZQrGMlS9y7acA0k Y3KgY/EmyUjT5jh9R/OmgSxBhbvtUdZpHbGrxv6jgbY92IFFnSo+3KJlzEo5 qpdSsWHl2vz0l/sJnwUu+eUYB63g6zyqUcIiAMXSr/LILPsVp+BpQA==","resultCode":"103000","desc":"成功"}
+2020-09-08 17:39:38.128 D/phonescrip: CMCC-SDK:26851B33374186CBEE025F3205D08C19EBE92FE29E42A367C0A2BEE530EDAD48125EF7024EEB1A94C6620B0E7AB6D9C8D341098BAAAD02257CF0B1EAC85E453008E047B577CB0340D9770E90C4861A079C7C2EE1AFD4C77297AC5E8BF83AE82A93970AEF87408C43649EC8A5837AE5F58ECB5CAEB7D939040E936DB4067DB752
+2020-09-08 17:39:38.132 D/onBusinessComplete: CMCC-SDK:onBusinessComplete
+2020-09-08 17:39:38.148 I/LinkedME_LinkPage: onPaused HomeActivity  activityCnt_ = 1
+2020-09-08 17:39:38.152 D/===>mob:
+2020-09-08 17:39:38.152 D/===>mob: ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.152 D/===>mob: ║ UMAgent.onPageEnd(UMAgent.java:104)
+2020-09-08 17:39:38.152 D/===>mob: ╟───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2020-09-08 17:39:38.152 D/===>mob: ║ 页面tab_mine_VISIT停止计时
+2020-09-08 17:39:38.152 D/===>mob: ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.152 D/===>mob:
+2020-09-08 17:39:38.163 D/ActivityUtils: Add to running activity map:com.cmic.sso.sdk.activity.LoginAuthActivity.Map size :2
+2020-09-08 17:39:38.164 I/LinkedME_LinkPage: onCreated LoginAuthActivity  activityCnt_ = 1
+2020-09-08 17:39:38.165 D/ViewContentFactory: initViewContentFetcherClass
+2020-09-08 17:39:38.165 I/ContentCatcher: ViewContentFetcher : ViewContentFetcher
+2020-09-08 17:39:38.165 D/ViewContentFactory: createInterceptor took 0ms
+2020-09-08 17:39:38.167 D/LoginAuthActivity: CMCC-SDK:mSecurityPhone value is 156****4828
+2020-09-08 17:39:38.167 D/LoginAuthActivity: CMCC-SDK:operator value is 2
+2020-09-08 17:39:38.184 D/EgretLoader: EgretLoader(Context context)
+2020-09-08 17:39:38.185 D/EgretLoader: The context is not activity
+2020-09-08 17:39:38.201 D/EgretLoader: EgretLoader(Context context)
+2020-09-08 17:39:38.201 D/EgretLoader: The context is not activity
+2020-09-08 17:39:38.216 D/EgretLoader: EgretLoader(Context context)
+2020-09-08 17:39:38.216 D/EgretLoader: The context is not activity
+2020-09-08 17:39:38.228 D/CMCC-SDK:: [LoginAuthActivity] : orientation = -1--screenWidth = 1080--screenHeight = 1920
+2020-09-08 17:39:38.231 D/LoginAuthActivity: CMCC-SDK:mPhoneLayout.getMeasuredHeight()=121
+2020-09-08 17:39:38.263 D/LoginAuthActivity: CMCC-SDK:mPhoneLayout.getMeasuredHeight()=121
+2020-09-08 17:39:38.263 D/LoginAuthActivity: CMCC-SDK:numberField_top
+2020-09-08 17:39:38.263 D/LoginAuthActivity: CMCC-SDK:logBtn_top
+2020-09-08 17:39:38.269 D/LoginAuthActivity: CMCC-SDK:privacy_bottom=93
+2020-09-08 17:39:38.271 I/LinkedME_LinkPage: onResumed LoginAuthActivity  activityCnt_ = 1 getIntent() = Intent { flg=0x10000000 cmp=com.beiins.dolly/com.cmic.sso.sdk.activity.LoginAuthActivity (has extras) }
+2020-09-08 17:39:38.276 I/LinkedME_LinkPage: onResumed LoginAuthActivity,intent=null
+2020-09-08 17:39:38.278 D/AuthnResult: CMCC-SDK:返回参数:{"resultCode":"200025","authType":"2","authTypeDes":"网关鉴权","resultDesc":"发生未知错误"}
+2020-09-08 17:39:38.279 D/TelephonyUtils: CMCC-SDK:流量
+2020-09-08 17:39:38.284 D/o: CMCC-SDK:SysOperType = 46001
+2020-09-08 17:39:38.284 E/o: CMCC-SDK:中国联通
+2020-09-08 17:39:38.285 E/SendLog: CMCC-SDK:登录日志{"traceId":"97d0bcda49d54b94afa901c2c7bcf624","requestTime":"20200908173937005","responseTime":"20200908173938281","requestType":"loginAuth","loginType":"pgw","sdkVersion":"quick_login_android_5.7.2","networkType":"1","networkClass":"3","reqDevice":"MI 6","reqSystem":"android8.0.0","operatorType":"2","simCardNum":"2","exceptionStackTrace":[{"message":"java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String org.json.JSONObject.toString()' on a null object reference","stack":"\ncom.beiins.utils.OneKeyLoginUtil$1.onLoginPageInComplete(OneKeyLoginUtil.java:137)\ncom.cmic.sso.sdk.auth.AuthnHelper.loginPageInCallBack(AuthnHelper.java:395)\ncom.cmic.sso.sdk.activity.LoginAuthActivity.onResume(LoginAuthActivity.java:121)\nandroid.app.Instrumentation.callActivityOnResume(Instrumentation.java:1355)\nandroid.app.Activity.performResume(Activity.java:7154)\nandroid.app.ActivityThread.performResumeActivity(ActivityThread.java:3666)\nandroid.app.ActivityThread.handleResumeActivity(ActivityThread.java:3731)\nandroid.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2937)\nandroid.app.ActivityThread.-wrap11(Unknown Source:0)\nandroid.app.ActivityThread$H.handleMessage(ActivityThread.java:1620)\nandroid.os.Handler.dispatchMessage(Handler.java:105)\nandroid.os.Looper.loop(Looper.java:176)\nandroid.app.ActivityThread.main(ActivityThread.java:6701)\njava.lang.reflect.Method.invoke(Native Method)\ncom.android.internal.os.Zygote$MethodAndArgsCaller.run(Zygote.java:249)\ncom.android.internal.os.ZygoteInit.main(ZygoteInit.java:783)"}],"appName":"小贝保险","appVersion":"com.beiins.dolly&3.0.9","interfaceCode":"302;302;302;0;103000;","interfaceType":"getPrePhonescrip;getUnicomMobile;getUnicomMobile;getUnicomMobile;getNewTelecomPhoneNumberNotify;","interfaceElasped":"1069;","appid":"300011989568","brand":"Xiaomi","resultCode":"200025","is_root":"1","imsiState":"0","elapsedTime":"1278","loginTime":"0","clientType":"android","timeOut":"8000","is_phoneStatePermission":"1","AID":"%cc29d4e115d249b28712616598384fe0","sysOperType":"2"}
+2020-09-08 17:39:38.292 E/SendLog: CMCC-SDK:request https url : https://log1.cmpassport.com:9443/log/logReport>>>>>>> PARAMS : {"header":{"sign":"8CA02190B9EE8232B32449FF19E56D21","msgid":"f23eca4e699b46278f60e99ab1df3dbf","systemtime":"20200908173938286","appid":"300011989568","version":"2.0"},"body":{"log":[{"traceId":"97d0bcda49d54b94afa901c2c7bcf624","requestTime":"20200908173937005","responseTime":"20200908173938281","requestType":"loginAuth","loginType":"pgw","sdkVersion":"quick_login_android_5.7.2","networkType":"1","networkClass":"3","reqDevice":"MI 6","reqSystem":"android8.0.0","operatorType":"2","simCardNum":"2","exceptionStackTrace":[{"message":"java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String org.json.JSONObject.toString()' on a null object reference","stack":"\ncom.beiins.utils.OneKeyLoginUtil$1.onLoginPageInComplete(OneKeyLoginUtil.java:137)\ncom.cmic.sso.sdk.auth.AuthnHelper.loginPageInCallBack(AuthnHelper.java:395)\ncom.cmic.sso.sdk.activity.LoginAuthActivity.onResume(LoginAuthActivity.java:121)\nandroid.app.Instrumentation.callActivityOnResume(Instrumentation.java:1355)\nandroid.app.Activity.performResume(Activity.java:7154)\nandroid.app.ActivityThread.performResumeActivity(ActivityThread.java:3666)\nandroid.app.ActivityThread.handleResumeActivity(ActivityThread.java:3731)\nandroid.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2937)\nandroid.app.ActivityThread.-wrap11(Unknown Source:0)\nandroid.app.ActivityThread$H.handleMessage(ActivityThread.java:1620)\nandroid.os.Handler.dispatchMessage(Handler.java:105)\nandroid.os.Looper.loop(Looper.java:176)\nandroid.app.ActivityThread.main(ActivityThread.java:6701)\njava.lang.reflect.Method.invoke(Native Method)\ncom.android.internal.os.Zygote$MethodAndArgsCaller.run(Zygote.java:249)\ncom.android.internal.os.ZygoteInit.main(ZygoteInit.java:783)"}],"appName":"小贝保险","appVersion":"com.beiins.dolly&3.0.9","interfaceCode":"302;302;302;0;103000;","interfaceType":"getPrePhonescrip;getUnicomMobile;getUnicomMobile;getUnicomMobile;getNewTelecomPhoneNumberNotify;","interfaceElasped":"1069;","appid":"300011989568","brand":"Xiaomi","resultCode":"200025","is_root":"1","imsiState":"0","elapsedTime":"1278","loginTime":"0","clientType":"android","timeOut":"8000","is_phoneStatePermission":"1","AID":"%cc29d4e115d249b28712616598384fe0","sysOperType":"2"}]}}
+2020-09-08 17:39:38.292 I/HttpUtils: CMCC-SDK:使用wifi下取号？？？？？？？false
+2020-09-08 17:39:38.295 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: https://log1.cmpassport.com:9443/log/logReport
+2020-09-08 17:39:38.295 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:38.318 D/===>mobile:
+2020-09-08 17:39:38.318 D/===>mobile: ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.318 D/===>mobile: ║ OneKeyLoginUtil$6.onGetTokenComplete(OneKeyLoginUtil.java:277)
+2020-09-08 17:39:38.318 D/===>mobile: ╟───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2020-09-08 17:39:38.318 D/===>mobile: ║ {"resultCode":"200025","authType":"2","authTypeDes":"网关鉴权","resultDesc":"发生未知错误","traceId":"97d0bcda49d54b94afa901c2c7bcf624"}
+2020-09-08 17:39:38.318 D/===>mobile: ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.318 D/===>mobile:
+2020-09-08 17:39:38.323 D/AuthnResult: CMCC-SDK:返回参数:{"resultCode":"200020","authType":"2","authTypeDes":"网关鉴权","resultDesc":"登录页面关闭"}
+2020-09-08 17:39:38.324 D/TelephonyUtils: CMCC-SDK:流量
+2020-09-08 17:39:38.328 D/o: CMCC-SDK:SysOperType = 46001
+2020-09-08 17:39:38.328 E/o: CMCC-SDK:中国联通
+2020-09-08 17:39:38.329 E/SendLog: CMCC-SDK:登录日志{"traceId":"97d0bcda49d54b94afa901c2c7bcf624","requestTime":"20200908173937005","responseTime":"20200908173938326","requestType":"loginAuth","loginType":"pgw","sdkVersion":"quick_login_android_5.7.2","networkType":"1","networkClass":"3","reqDevice":"MI 6","reqSystem":"android8.0.0","operatorType":"2","simCardNum":"2","appName":"小贝保险","appVersion":"com.beiins.dolly&3.0.9","interfaceCode":"","interfaceType":"","interfaceElasped":"","appid":"300011989568","brand":"Xiaomi","resultCode":"200020","is_root":"1","imsiState":"0","elapsedTime":"1323","loginTime":"0","clientType":"android","timeOut":"8000","is_phoneStatePermission":"1","AID":"%cc29d4e115d249b28712616598384fe0","sysOperType":"2"}
+2020-09-08 17:39:38.329 E/LoginAuthActivity: CMCC-SDK:loginClickComplete
+2020-09-08 17:39:38.334 E/SendLog: CMCC-SDK:request https url : https://log1.cmpassport.com:9443/log/logReport>>>>>>> PARAMS : {"header":{"sign":"13DA5E657A17900566765D8C111F3BBE","msgid":"2f814b58dfc64e17b0f543c8dbc22c5a","systemtime":"20200908173938329","appid":"300011989568","version":"2.0"},"body":{"log":[{"traceId":"97d0bcda49d54b94afa901c2c7bcf624","requestTime":"20200908173937005","responseTime":"20200908173938326","requestType":"loginAuth","loginType":"pgw","sdkVersion":"quick_login_android_5.7.2","networkType":"1","networkClass":"3","reqDevice":"MI 6","reqSystem":"android8.0.0","operatorType":"2","simCardNum":"2","appName":"小贝保险","appVersion":"com.beiins.dolly&3.0.9","interfaceCode":"","interfaceType":"","interfaceElasped":"","appid":"300011989568","brand":"Xiaomi","resultCode":"200020","is_root":"1","imsiState":"0","elapsedTime":"1323","loginTime":"0","clientType":"android","timeOut":"8000","is_phoneStatePermission":"1","AID":"%cc29d4e115d249b28712616598384fe0","sysOperType":"2"}]}}
+2020-09-08 17:39:38.334 I/HttpUtils: CMCC-SDK:使用wifi下取号？？？？？？？false
+2020-09-08 17:39:38.335 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: https://log1.cmpassport.com:9443/log/logReport
+2020-09-08 17:39:38.335 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:38.405 D/===>mobile:
+2020-09-08 17:39:38.405 D/===>mobile: ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.405 D/===>mobile: ║ OneKeyLoginUtil$6.onGetTokenComplete(OneKeyLoginUtil.java:277)
+2020-09-08 17:39:38.406 D/===>mobile: ╟───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2020-09-08 17:39:38.406 D/===>mobile: ║ {"resultCode":"200020","authType":"2","authTypeDes":"网关鉴权","resultDesc":"登录页面关闭","traceId":"97d0bcda49d54b94afa901c2c7bcf624"}
+2020-09-08 17:39:38.406 D/===>mobile: ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.406 D/===>mobile:
+2020-09-08 17:39:38.406 D/===>mobile:
+2020-09-08 17:39:38.406 D/===>mobile: ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.406 D/===>mobile: ║ OneKeyLoginUtil$6.onGetTokenComplete(OneKeyLoginUtil.java:285)
+2020-09-08 17:39:38.406 D/===>mobile: ╟───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2020-09-08 17:39:38.406 D/===>mobile: ║ 一键登录页面关闭
+2020-09-08 17:39:38.406 D/===>mobile: ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+2020-09-08 17:39:38.406 D/===>mobile:
+2020-09-08 17:39:38.407 I/LinkedME_LinkPage: onPaused LoginAuthActivity  activityCnt_ = 2
+2020-09-08 17:39:38.415 I/chromium: [INFO:CONSOLE(5)] "The key "target-densitydpi" is not supported.", source: https://opencloud.wostore.cn/authz/resource/html/disclaimer.html?fromsdk=true (5)
+2020-09-08 17:39:38.433 D/ActivityUtils: Add to running activity map:com.beiins.activity.LoginActivity.Map size :3
+2020-09-08 17:39:38.434 I/LinkedME_LinkPage: onCreated LoginActivity  activityCnt_ = 2
+2020-09-08 17:39:38.435 D/ViewContentFactory: initViewContentFetcherClass
+2020-09-08 17:39:38.435 I/ContentCatcher: ViewContentFetcher : ViewContentFetcher
+2020-09-08 17:39:38.435 D/ViewContentFactory: createInterceptor took 0ms
+2020-09-08 17:39:38.460 D/MicroMsg.PaySdk.WXFactory: createWXAPI, appId = wx18a0759a8493d3e8, checkSignature = true
+2020-09-08 17:39:38.460 D/MicroMsg.SDK.WXApiImplV10: <init>, appId = wx18a0759a8493d3e8, checkSignature = true
+2020-09-08 17:39:38.461 D/MicroMsg.SDK.WXMsgImplComm: check signature:308202eb30820254a00302010202044d36f7a4300d06092a864886f70d01010505003081b9310b300906035504061302383631123010060355040813094775616e67646f6e673111300f060355040713085368656e7a68656e31353033060355040a132c54656e63656e7420546563686e6f6c6f6779285368656e7a68656e2920436f6d70616e79204c696d69746564313a3038060355040b133154656e63656e74204775616e677a686f7520526573656172636820616e6420446576656c6f706d656e742043656e7465723110300e0603550403130754656e63656e74301e170d3131303131393134333933325a170d3431303131313134333933325a3081b9310b300906035504061302383631123010060355040813094775616e67646f6e673111300f060355040713085368656e7a68656e31353033060355040a132c54656e63656e7420546563686e6f6c6f6779285368656e7a68656e2920436f6d70616e79204c696d69746564313a3038060355040b133154656e63656e74204775616e677a686f7520526573656172636820616e6420446576656c6f706d656e742043656e7465723110300e0603550403130754656e63656e7430819f300d06092a864886f70d010101050003818d0030818902818100c05f34b231b083fb1323670bfbe7bdab40c0c0a6efc87ef2072a1ff0d60cc67c8edb0d0847f210bea6cbfaa241be70c86daf56be08b723c859e52428a064555d80db448cdcacc1aea2501eba06f8bad12a4fa49d85cacd7abeb68945a5cb5e061629b52e3254c373550ee4e40cb7c8ae6f7a8151ccd8df582d446f39ae0c5e930203010001300d06092a864886f70d0101050500038181009c8d9d7f2f908c42081b4c764c377109a8b2c70582422125ce545842d5f520aea69550b6bd8bfd94e987b75a3077eb04ad341f481aac266e89d3864456e69fba13df018acdc168b9a19dfd7ad9d9cc6f6ace57c746515f71234df3a053e33ba93ece5cd0fc15f3e389a3f365588a9fcb439e069d3629cd7732a13fff7b891499
+2020-09-08 17:39:38.461 D/MicroMsg.SDK.WXMsgImplComm: pass
+2020-09-08 17:39:38.461 D/MicroMsg.SDK.WXApiImplV10: registerApp, appId = wx18a0759a8493d3e8
+2020-09-08 17:39:38.461 D/MicroMsg.SDK.WXApiImplV10: registerApp, appId = wx18a0759a8493d3e8
+2020-09-08 17:39:38.461 D/MicroMsg.SDK.WXApiImplV10: register app com.beiins.dolly
+2020-09-08 17:39:38.462 D/MicroMsg.SDK.MMessage: send mm message, intent=Intent { act=com.tencent.mm.plugin.openapi.Intent.ACTION_HANDLE_APP_REGISTER (has extras) }, perm=com.tencent.mm.permission.MM_MESSAGE
+2020-09-08 17:39:38.463 D/MicroMsg.SDK.WXMsgImplComm: check signature:308202eb30820254a00302010202044d36f7a4300d06092a864886f70d01010505003081b9310b300906035504061302383631123010060355040813094775616e67646f6e673111300f060355040713085368656e7a68656e31353033060355040a132c54656e63656e7420546563686e6f6c6f6779285368656e7a68656e2920436f6d70616e79204c696d69746564313a3038060355040b133154656e63656e74204775616e677a686f7520526573656172636820616e6420446576656c6f706d656e742043656e7465723110300e0603550403130754656e63656e74301e170d3131303131393134333933325a170d3431303131313134333933325a3081b9310b300906035504061302383631123010060355040813094775616e67646f6e673111300f060355040713085368656e7a68656e31353033060355040a132c54656e63656e7420546563686e6f6c6f6779285368656e7a68656e2920436f6d70616e79204c696d69746564313a3038060355040b133154656e63656e74204775616e677a686f7520526573656172636820616e6420446576656c6f706d656e742043656e7465723110300e0603550403130754656e63656e7430819f300d06092a864886f70d010101050003818d0030818902818100c05f34b231b083fb1323670bfbe7bdab40c0c0a6efc87ef2072a1ff0d60cc67c8edb0d0847f210bea6cbfaa241be70c86daf56be08b723c859e52428a064555d80db448cdcacc1aea2501eba06f8bad12a4fa49d85cacd7abeb68945a5cb5e061629b52e3254c373550ee4e40cb7c8ae6f7a8151ccd8df582d446f39ae0c5e930203010001300d06092a864886f70d0101050500038181009c8d9d7f2f908c42081b4c764c377109a8b2c70582422125ce545842d5f520aea69550b6bd8bfd94e987b75a3077eb04ad341f481aac266e89d3864456e69fba13df018acdc168b9a19dfd7ad9d9cc6f6ace57c746515f71234df3a053e33ba93ece5cd0fc15f3e389a3f365588a9fcb439e069d3629cd7732a13fff7b891499
+2020-09-08 17:39:38.463 D/MicroMsg.SDK.WXMsgImplComm: pass
+2020-09-08 17:39:38.466 I/LinkedME_LinkPage: onResumed LoginActivity  activityCnt_ = 2 getIntent() = Intent { cmp=com.beiins.dolly/com.beiins.activity.LoginActivity (has extras) }
+2020-09-08 17:39:38.469 I/LinkedME_LinkPage: onResumed LoginActivity,intent=null
+2020-09-08 17:39:38.484 D/MobclickAgent: 延续上一个会话: 8FC1718E7FDECEECBACAE996674F3715
+2020-09-08 17:39:38.491 D/UMLog: 当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2020-09-08 17:39:38.648 E/SendLog: CMCC-SDK:request success , url : https://log1.cmpassport.com:9443/log/logReport>>>>result : {"resultCode":"103000","config":{"sizelimit":"2","limitM":"20","norlog":"1","limitN":"3","crashlog":"1","limitX":"20","fusingTime":"1","failLimit":"3","timelimit":"2"},"desc":"success"}
+2020-09-08 17:39:38.661 I/chromium: [INFO:CONSOLE(12)] "将根据已有的meta标签来设置缩放比例", source: https://opencloud.wostore.cn/authz/resource/js/flexible.js (12)
+2020-09-08 17:39:38.955 I/LinkedME_LinkPage: onStop LoginAuthActivity  activityCnt_ = 3
+2020-09-08 17:39:38.958 E/EventUtils: CMCC-SDK:埋点日志上报{"traceId":"97d0bcda49d54b94afa901c2c7bcf624","requestTime":"20200908173938165","responseTime":"20200908173938322","requestType":"eventTracking5","sdkVersion":"quick_login_android_5.7.2","networkType":"1","networkClass":"3","reqDevice":"MI 6","reqSystem":"android8.0.0","operatorType":"2","simCardNum":"2","appName":"小贝保险","appVersion":"com.beiins.dolly&3.0.9","event":{"authPageOut":"1","authPageIn":"1","timeOnAuthPage":"789","authPrivacyState":"1"},"appid":"300011989568","brand":"Xiaomi","is_root":"1","imsiState":"0","elapsedTime":"1953","clientType":"android","timeOut":"8000","is_phoneStatePermission":"1"}
+2020-09-08 17:39:38.958 D/ActivityUtils: Remove running activity map:com.cmic.sso.sdk.activity.LoginAuthActivity.Map size :2
+2020-09-08 17:39:38.959 I/LinkedME_LinkPage: onDestroyed LoginAuthActivity
+2020-09-08 17:39:38.961 E/SendLog: CMCC-SDK:request https url : https://log1.cmpassport.com:9443/log/logReport>>>>>>> PARAMS : {"header":{"sign":"B4A0B7207CAAFDD62B4862D73273D285","msgid":"48b0e37441e24f37831f8d35843f6c27","systemtime":"20200908173938958","appid":"300011989568","version":"2.0"},"body":{"log":[{"traceId":"97d0bcda49d54b94afa901c2c7bcf624","requestTime":"20200908173938165","responseTime":"20200908173938322","requestType":"eventTracking5","sdkVersion":"quick_login_android_5.7.2","networkType":"1","networkClass":"3","reqDevice":"MI 6","reqSystem":"android8.0.0","operatorType":"2","simCardNum":"2","appName":"小贝保险","appVersion":"com.beiins.dolly&3.0.9","event":{"authPageOut":"1","authPageIn":"1","timeOnAuthPage":"789","authPrivacyState":"1"},"appid":"300011989568","brand":"Xiaomi","is_root":"1","imsiState":"0","elapsedTime":"1953","clientType":"android","timeOut":"8000","is_phoneStatePermission":"1"}]}}
+2020-09-08 17:39:38.961 I/HttpUtils: CMCC-SDK:使用wifi下取号？？？？？？？false
+2020-09-08 17:39:38.961 E/HttpUtils: CMCC-SDK:try 1 http reqeust, url: https://log1.cmpassport.com:9443/log/logReport
+2020-09-08 17:39:38.961 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:39.041 E/SendLog: CMCC-SDK:request success , url : https://log1.cmpassport.com:9443/log/logReport>>>>result : {"resultCode":"103000","config":{"sizelimit":"2","limitM":"20","norlog":"1","limitN":"3","crashlog":"1","limitX":"20","fusingTime":"1","failLimit":"3","timelimit":"2"},"desc":"success"}
+2020-09-08 17:39:40.561 I/crashsdk: Begin update info ...
+2020-09-08 17:39:40.565 I/crashsdk: Update info took 4 ms
+2020-09-08 17:39:44.061 I/zygote: Explicit concurrent copying GC freed 26170(1809KB) AllocSpace objects, 7(140KB) LOS objects, 49% free, 4MB/8MB, paused 679us total 97.551ms
+2020-09-08 17:39:44.182 D/LeakCanary: Could not dump heap, previous analysis still is in progress.
+2020-09-08 17:39:50.321 I/DEBUG: begin to generate unexp report
+2020-09-08 17:39:50.322 I/crashsdk: dvm.onDebugMessage: Unable to open file '/dev/log/main': No such file or directory
+2020-09-08 17:39:50.322 I/crashsdk: DvmLogcatReader, cnt: 0
+2020-09-08 17:39:50.323 I/crashsdk: art.onDebugMessage: cmd: 'dumpAndClose lids=0,3,2'
+2020-09-08 17:39:50.363 I/crashsdk: art.onDebugMessage: ret: 0, e: 2 (No such file or directory)
+2020-09-08 17:39:50.363 I/crashsdk: art.onDebugMessage: recv end: 2 (No such file or directory)
+2020-09-08 17:39:50.363 I/crashsdk: ArtLogcatReader, cnt: 271
+2020-09-08 17:39:50.364 I/crashsdk: handle unexp, anr: 0, low mem: 0, killed: 0, exited: 0, restart: 0. subtypes: 512, expect subtypes: 32000
+2020-09-08 17:39:50.364 I/DEBUG: unexp report not generated
+2020-09-08 17:39:52.062 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:39:52.392 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:39:54.285 I/zygote: Explicit concurrent copying GC freed 28373(2MB) AllocSpace objects, 16(324KB) LOS objects, 49% free, 4MB/8MB, paused 1.022ms total 96.125ms
+2020-09-08 17:39:54.394 D/LeakCanary: Could not dump heap, previous analysis still is in progress.
+2020-09-08 17:39:57.524 W/System.err: java.net.SocketTimeoutException: timeout
+2020-09-08 17:39:57.529 W/System.err:     at com.android.okhttp.okio.Okio$3.newTimeoutException(Okio.java:212)
+2020-09-08 17:39:57.529 W/System.err:     at com.android.okhttp.okio.AsyncTimeout.exit(AsyncTimeout.java:250)
+2020-09-08 17:39:57.529 W/System.err:     at com.android.okhttp.okio.AsyncTimeout$2.read(AsyncTimeout.java:217)
+2020-09-08 17:39:57.529 W/System.err:     at com.android.okhttp.okio.RealBufferedSource.indexOf(RealBufferedSource.java:306)
+2020-09-08 17:39:57.529 W/System.err:     at com.android.okhttp.okio.RealBufferedSource.indexOf(RealBufferedSource.java:300)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:196)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.http.Http1xStream.readResponse(Http1xStream.java:186)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.http.Http1xStream.readResponseHeaders(Http1xStream.java:127)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.http.HttpEngine.readNetworkResponse(HttpEngine.java:737)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.http.HttpEngine.readResponse(HttpEngine.java:609)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:471)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:407)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:538)
+2020-09-08 17:39:57.530 W/System.err:     at com.android.okhttp.internal.huc.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+2020-09-08 17:39:57.531 W/System.err:     at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getResponseCode(Unknown Source:0)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.utils.d.a(HttpUtils.java:157)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.utils.d.a(HttpUtils.java:63)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.c.b.a(SendLog.java:208)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.c.b.a(SendLog.java:196)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.c.b.a(SendLog.java:168)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.c.b.a(SendLog.java:33)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.c.b$1.a(SendLog.java:156)
+2020-09-08 17:39:57.531 W/System.err:     at com.cmic.sso.sdk.utils.u$a.run(ThreadUtils.java:62)
+2020-09-08 17:39:57.531 W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1162)
+2020-09-08 17:39:57.532 W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+2020-09-08 17:39:57.532 W/System.err:     at java.lang.Thread.run(Thread.java:764)
+2020-09-08 17:39:57.532 E/HttpUtils: CMCC-SDK:http response code is not 200 ----1
+2020-09-08 17:39:57.532 E/HttpUtils: CMCC-SDK:try 2 http reqeust, url: https://log1.cmpassport.com:9443/log/logReport
+2020-09-08 17:39:57.533 I/HttpUtils: CMCC-SDK:is network null?为空
+2020-09-08 17:39:57.686 E/SendLog: CMCC-SDK:request success , url : https://log1.cmpassport.com:9443/log/logReport>>>>result : {"resultCode":"103000","config":{"sizelimit":"2","limitM":"20","norlog":"1","limitN":"3","crashlog":"1","limitX":"20","fusingTime":"1","failLimit":"3","timelimit":"2"},"desc":"success"}
+2020-09-08 17:40:14.509 I/zygote: Explicit concurrent copying GC freed 41359(3MB) AllocSpace objects, 31(852KB) LOS objects, 49% free, 4MB/8MB, paused 973us total 99.798ms
+2020-09-08 17:40:14.616 D/LeakCanary: Could not dump heap, previous analysis still is in progress.
+2020-09-08 17:40:30.606 I/crashsdk: Begin update info ...
+2020-09-08 17:40:30.591 W/CrashSDKBkgdHan: type=1400 audit(0.0:208941): avc: denied { read } for name="loadavg" dev="proc" ino=4026532100 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:proc:s0 tclass=file permissive=0
+2020-09-08 17:40:30.591 W/CrashSDKBkgdHan: type=1400 audit(0.0:208942): avc: denied { read } for name="stat" dev="proc" ino=4026532102 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:proc_stat:s0 tclass=file permissive=0
+2020-09-08 17:40:30.611 I/crashsdk: Update info took 5 ms
+2020-09-08 17:40:52.061 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:40:52.150 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:40:54.684 I/zygote: Explicit concurrent copying GC freed 2371(185KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 4MB/8MB, paused 435us total 44.789ms
+2020-09-08 17:40:54.793 D/LeakCanary: Could not dump heap, previous analysis still is in progress.
+2020-09-08 17:41:20.713 I/crashsdk: Begin update info ...
+2020-09-08 17:41:20.701 W/CrashSDKBkgdHan: type=1400 audit(0.0:208956): avc: denied { read } for name="loadavg" dev="proc" ino=4026532100 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:proc:s0 tclass=file permissive=0
+2020-09-08 17:41:20.719 I/crashsdk: Update info took 6 ms
+2020-09-08 17:41:52.063 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:41:52.165 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:42:10.772 I/crashsdk: Begin update info ...
+2020-09-08 17:42:10.761 W/CrashSDKBkgdHan: type=1400 audit(0.0:208974): avc: denied { read } for name="loadavg" dev="proc" ino=4026532100 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:proc:s0 tclass=file permissive=0
+2020-09-08 17:42:10.761 W/CrashSDKBkgdHan: type=1400 audit(0.0:208975): avc: denied { read } for name="stat" dev="proc" ino=4026532102 scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:proc_stat:s0 tclass=file permissive=0
+2020-09-08 17:42:10.785 I/crashsdk: Update info took 12 ms
+2020-09-08 17:42:14.948 I/zygote: Explicit concurrent copying GC freed 18893(1615KB) AllocSpace objects, 7(140KB) LOS objects, 49% free, 4MB/8MB, paused 1.040ms total 96.893ms
+2020-09-08 17:42:15.055 D/LeakCanary: Could not dump heap, previous analysis still is in progress.
+2020-09-08 17:42:52.063 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:42:52.157 I/LinkedME_LinkPage: 用户已同意隐私协议，开始执行请求
+2020-09-08 17:43:00.851 I/crashsdk: Begin update info ...
+2020-09-08 17:43:00.858 I/crashsdk: Update info took 7 ms

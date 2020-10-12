@@ -1,6 +1,7 @@
 package com.rjp.expandframework.activitys;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;

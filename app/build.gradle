@@ -210,9 +210,9 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
     implementation "com.android.support:multidex:1.0.3" // 多dex配置
-    implementation 'com.tencent.bugly:nativecrashreport:3.3.1'
-    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.0'
-    implementation 'com.tencent.tinker:tinker-android-lib:1.9.9'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.2'
+    implementation 'com.tencent.tinker:tinker-android-lib:1.9.14'
 
     implementation 'com.vise.xiaoyaoyou:viselog:1.0.0'
 

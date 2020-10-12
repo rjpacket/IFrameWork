@@ -7,27 +7,12 @@
         android:layout_height="match_parent"
         tools:context="com.rjp.fastframework.app.AnimTestActivity"
         >
-    <com.rjp.fastframework.FrameLayoutA
-            android:id="@+id/ll_a"
+    <com.rjp.fastframework.views.CardContainerView
+            android:id="@+id/card_container_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f3f4f5"
+            android:background="#000"
             >
-        <com.rjp.fastframework.FrameLayoutB
-                android:id="@+id/ll_b"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="50dp"
-                android:gravity="center"
-                android:background="#ccc"
-                >
-            <com.rjp.fastframework.FrameLayoutC
-                    android:id="@+id/tv_text"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:gravity="center"
-                    android:background="#eb1c42"
-                    />
-        </com.rjp.fastframework.FrameLayoutB>
-    </com.rjp.fastframework.FrameLayoutA>
+
+    </com.rjp.fastframework.views.CardContainerView>
 </FrameLayout>
